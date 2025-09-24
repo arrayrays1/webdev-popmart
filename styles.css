@@ -1,1 +1,19 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+.custom-navbar {
+  background-color: #ffffff;
+}
+.custom-footer {
+  background-color: #d50000;
+}
+.custom-footer p {
+  color: #ffffff;
+}
+
+.custom-navbar .nav-link {
+  color: #333;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #aeaeae;
+}
