@@ -1325,4 +1325,12 @@ textarea.form-control-lg{min-height:calc(1.5em + 1rem + calc(var(--bs-border-wid
 .custom-navbar .nav-link:hover {
   color: #aeaeae;
 }
+.custom-h1 {
+  font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 /*# sourceMappingURL=styles.css.map */
