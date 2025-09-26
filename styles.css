@@ -1,5 +1,14 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
+/* navbar */
+#mainNavbar {
+  transition: top 0.4s ease-in-out;
+}
+
+.navbar-hidden {
+  top: -80px;
+}
+
 .custom-navbar {
   background-color: #ffffff;
 }
@@ -12,19 +21,67 @@
 
 .custom-navbar .nav-link {
   color: #333;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  margin-left: 5px;
 }
 
-.custom-navbar .nav-link:hover {
-  color: #aeaeae;
+/* hover background for navbar */
+.navbar .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/*underline hover animation */
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(45deg, #a74242, #ff3333);
+  transition: width 0.3s ease;
+}
+
+/* on hover */
+.navbar .nav-link:hover {
+  color: #d50000;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
 }
 
 .custom-h1 {
-  font-family: 'Poppins', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     color: #333;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
+
+/* carousel shadow */
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  z-index: 1;
+}
+
+.carousel-caption {
+  position: absolute;
+  z-index: 2;
+}
+
 
 /*custom cards*/
 .new-arrivals .custom-card {
@@ -51,14 +108,15 @@
 }
 
 .new-arrivals .custom-card-details {
+  margin-top: 0.5rem;
   color: black;
   display: grid;
 }
 
 .new-arrivals .text-title {
   font-size: 1em;
-  font-weight: bold;
-  font-family: poppins, sans-serif;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
 }
 
 .new-arrivals .custom-card-button {
@@ -88,3 +146,30 @@
   transform: translate(-50%, 50%);
   opacity: 1;
 }
+
+.card-title-best-seller {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    color: #333;
+}
+
+/* for button customized red color */
+.btn-primary {
+    background-color: #d50000;
+    border: none;
+    
+}
+
+.btn-primary:hover {
+  background-color: #b20000;
+}
+
+.btn-primary:active {
+  background-color: #b20000;
+}
+
+.btn-primary:focus {
+  background-color: #b20000;
+  box-shadow: none; 
+}
+
