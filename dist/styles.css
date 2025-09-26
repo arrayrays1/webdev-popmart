@@ -1374,6 +1374,39 @@ textarea.form-control-lg{min-height:calc(1.5em + 1rem + calc(var(--bs-border-wid
 .carousel-item {
   position: relative;
 }
+/* breadcrumb */
+.breadcrumb-item + .breadcrumb-item::before {
+  content: " >> ";   /* custom separator */
+  color: #555;       /* separator color */
+  font-weight: bold; /* make it stand out */
+}
+.breadcrumb-item a {
+  color: #d50000;
+  text-decoration: none;
+}
+.breadcrumb-item.active {
+  color: #333;
+  font-weight: 600;
+}
+.custom-breadcrumb .breadcrumb {
+  padding-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  justify-content: left;
+}
+.custom-h1-product-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 1px;   
+    margin-bottom: 20px;
+}
+.custom-product-section{
+  margin-bottom: 50px;
+}
+/* carousel */
 .carousel-item::after {
   content: "";
   position: absolute;
