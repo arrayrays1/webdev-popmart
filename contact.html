@@ -3,40 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Shop - Bootstrap</title>
-   <link href="./dist/styles.css" rel="stylesheet">
+  <title>Popmart - Products</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link href="./dist/styles.css" rel="stylesheet">
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+  <nav id = "mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="bootstrap.html">E-Shop</a>
+      <a class="navbar-brand" href="bootstrap.html">
+        <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
+      </a>
       <button class="navbar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto nav-links">
           <li class="nav-item"><a class="nav-link" href="bootstrap.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart</a></li>
         </ul>
+        <span class="hover-bg"></span>
       </div>
     </div>
   </nav>
+</header>
 
-  <!-- PRODUCTS -->
-  <section class="py-5">
+  <!-- NEW ARRIVALS -->
+<section class="py-5 new-arrivals">
+
+</section>
 
 
-  </section>
 
   <!-- FOOTER -->
-  <footer class="custom-footer text-white text-center py-3">
-    <p class="mb-0">© 2025 E-Shop | Designed for demo purposes</p>
+  <footer class="custom-footer text-center py-3">
+    <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
   </footer>
 
+
+
+<!-- scripts -->
+  <script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("mainNavbar");
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.scrollY;
+
+    if (scrollTop > lastScrollTop) {
+      // scrolling down
+      navbar.classList.add("navbar-hidden");
+    } else {
+      // scrolling up
+      navbar.classList.remove("navbar-hidden");
+    }
+
+    lastScrollTop = scrollTop;
+  });
+</script>
+
+<script src="./dist/bootstrap.bundle.min.js"></script>
 </body>
 </html>
