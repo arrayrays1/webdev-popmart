@@ -3,74 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popmart - Products</title>
+  <title>Popmart - My Cart</title>
   <link rel="icon" type="image/x-icon" href="favicon.png">
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
   <link href="./dist/styles.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav id = "mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="bootstrap.html">
-        <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
-      </a>
-      <button class="navbar-toggler" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto nav-links">
-          <li class="nav-item"><a class="nav-link" href="bootstrap.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart</a></li>
-        </ul>
-        <span class="hover-bg"></span>
+<!-- NAVBAR -->
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="bootstrap.html">
+      <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
+    </a>
+
+    <!-- Hamburger -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto nav-links">
+        <li class="nav-item"><a class="nav-link" href="bootstrap.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container my-5">
+    <h2 class="mb-4 custom-h2-cart">My Cart</h1>
+  <div class="row">
+    <!-- Left Column (Cart Items) -->
+    <div class="col-lg-8">
+      <div class="d-flex align-items-center mb-3">
+        <input type="checkbox" class="form-check-input me-2">
+        <label class="form-check-label">Select all</label>
+      </div>
+
+      <!-- Cart Item -->
+      <div class="d-flex align-items-start border-bottom py-3">
+        <input type="checkbox" class="form-check-input me-3 mt-2">
+        <img src="img/products-img-banner/products-mofusand/mofusand-1.png" alt="Mofusand Pastries" class="me-3" style="width: 150px; height: auto;">
+        <div class="flex-grow-1">
+          <h5 class="mb-1">MOFUSAND Pastries</h5>
+          <p class="text-muted mb-1">1 Box</p>
+          <p class="fw-bold">Php 300.00</p>
+          <div class="d-flex align-items-center">
+            <button class="btn btn-outline-secondary btn-sm">-</button>
+            <input type="text" class="form-control form-control-sm mx-2 text-center" value="1" style="width: 60px;">
+            <button class="btn btn-outline-secondary btn-sm">+</button>
+            <a href="#" class="ms-3 text-danger text-decoration-none">REMOVE</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Another Cart Item -->
+      <div class="d-flex align-items-start border-bottom py-3">
+        <input type="checkbox" class="form-check-input me-3 mt-2">
+        <img src="img/products-img-banner/products-smiski/smiski-5.png" alt="Smiski Birthday" class="me-3" style="width: 150px; height: auto;">
+        <div class="flex-grow-1">
+          <h5 class="mb-1">SMISKI Birthday Series</h5>
+          <p class="text-muted mb-1">1 Box</p>
+          <p class="fw-bold">Php 300.00</p>
+          <div class="d-flex align-items-center">
+            <button class="btn btn-outline-secondary btn-sm">-</button>
+            <input type="text" class="form-control form-control-sm mx-2 text-center" value="1" style="width: 60px;">
+            <button class="btn btn-outline-secondary btn-sm">+</button>
+            <a href="#" class="ms-3 text-danger text-decoration-none">REMOVE</a>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-</header>
 
-  <!-- NEW ARRIVALS -->
-<section class="py-5 new-arrivals">
+    <!-- Right Column (Summary) -->
+    <div class="col-lg-4">
+      <div class="border p-4">
+        <div class="d-flex justify-content-between mb-2">
+          <span>Subtotal</span>
+          <span>Php 600.00</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span>Shipping</span>
+          <span class="text-muted">Calculated at next step</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between fw-bold mb-3">
+          <span>Total(2)</span>
+          <span>Php 600.00 </span>
+        </div>
+        <button class="btn btn-primary w-100">CHECK OUT</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-</section>
-
-
-
-  <!-- FOOTER -->
-  <footer class="custom-footer text-center py-3">
-    <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
-  </footer>
-
-
-
-<!-- scripts -->
-  <script>
-  let lastScrollTop = 0;
-  const navbar = document.getElementById("mainNavbar");
-
-  window.addEventListener("scroll", function () {
-    let scrollTop = window.scrollY;
-
-    if (scrollTop > lastScrollTop) {
-      // scrolling down
-      navbar.classList.add("navbar-hidden");
-    } else {
-      // scrolling up
-      navbar.classList.remove("navbar-hidden");
-    }
-
-    lastScrollTop = scrollTop;
-  });
-</script>
-
-<script src="./dist/bootstrap.bundle.min.js"></script>
 </body>
 </html>
