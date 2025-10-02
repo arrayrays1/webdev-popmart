@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popmart - Products</title>
+  <title>Popmart - Contact</title>
   <link rel="icon" type="image/x-icon" href="favicon.png">
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,30 +31,94 @@
         <li class="nav-item"><a class="nav-link" href="bootstrap.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
+<div class="contact-div">
+<div class="cobtact-img" style="text-align: center;">
+  <img src="img/contact-banner.png" alt="Contact Banner" class="img-fluid" style="width: 50%;">
+</div>
+</div> 
 
-  <!-- NEW ARRIVALS -->
-<section class="py-5 new-arrivals">
+<!-- CONTACT SECTION -->
+<section class="py-5 contact-section">
+  <div class="container">
+    <h1 class="section-title text-center mb-5">Contact Us</h1>
 
+    <div class="row g-4">
+      <!-- Customer Support -->
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Customer Support</h3>
+          <p>For questions about online products or customer service, please reach out to our support team.</p>
+          <p><strong>Email:</strong> support@popmart.com</p>
+          <p><strong>Address:</strong><br>Nos. 721 - 725 Nathan Road, Flat/Rm 1405A, 14/F, Mongkok, Kowloon, New Territories, Hong Kong SAR</p>
+        </div>
+      </div>
+
+      <!-- Global Supply & Business -->
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Global Supply & Business</h3>
+          <p>POP MART provides products worldwide. With Roboshop vending machines, strategic alliances, and more, we’re here to support your needs.</p>
+          <p><strong>Asia:</strong> asia@popmart.com</p>
+          <p><strong>North America:</strong> us@popmart.com</p>
+          <p><strong>Europe:</strong> eu@popmart.com</p>
+          <p><strong>Australia:</strong> au@popmart.com</p>
+          <p><strong>New Zealand:</strong> nz@popmart.com</p>
+        </div>
+      </div>
+
+      <!-- Licensing -->
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Licensing</h3>
+          <p>We explore co-branding opportunities to expand our creative universe. Each IP is backed by a visionary artist, enabling unique collaborations and one-of-a-kind products.</p>
+          <p><strong>Email:</strong> brandlicensing@popmart.com</p>
+        </div>
+      </div>
+
+      <!-- Collaborations -->
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Collaborations</h3>
+          <p>POP MART thrives on creativity and innovation. We welcome collaborations with influencers, media, PR, and artists to create fun and impactful projects.</p>
+          <p><strong>Email:</strong> collab@popmart.com</p>
+        </div>
+      </div>
+
+      <!-- General Inquiries -->
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>General Inquiries</h3>
+          <p><strong>Email:</strong> info@popmart.com</p>
+        </div>
+      </div>
+
+      <!-- Media Inquiries -->
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Media Inquiries</h3>
+          <p><strong>Email:</strong> press@popmart.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
-
-  <!-- FOOTER -->
-  <footer class="custom-footer text-center py-3">
-    <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
-  </footer>
-
+<!-- FOOTER -->
+<footer class="custom-footer text-center py-3">
+  <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
+</footer>
 
 
 <!-- scripts -->
-  <script>
+<script>
   let lastScrollTop = 0;
   const navbar = document.getElementById("mainNavbar");
 
@@ -62,10 +126,8 @@
     let scrollTop = window.scrollY;
 
     if (scrollTop > lastScrollTop) {
-      // scrolling down
       navbar.classList.add("navbar-hidden");
     } else {
-      // scrolling up
       navbar.classList.remove("navbar-hidden");
     }
 
