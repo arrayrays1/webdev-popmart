@@ -1,25 +1,27 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-/* navbar */
+/* ================================
+   GLOBAL STYLES
+================================ */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* ================================
+   NAVBAR
+================================ */
 #mainNavbar {
   transition: top 0.4s ease-in-out;
 }
-
 .navbar-hidden {
   top: -80px;
 }
-
 .custom-navbar {
   background-color: #ffffff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.custom-footer {
-  background-color: #d50000;
-}
-.custom-footer p {
-  color: #ffffff;
-}
-
 .custom-navbar .nav-link {
   color: #333;
   font-weight: 500;
@@ -27,13 +29,11 @@
   margin-left: 5px;
 }
 
-/* hover background for navbar */
+/* hover in navbar + underline animation */
 .navbar .nav-link {
   position: relative;
   transition: color 0.3s ease;
 }
-
-/*underline hover animation */
 .navbar .nav-link::after {
   content: "";
   position: absolute;
@@ -44,45 +44,62 @@
   background: linear-gradient(45deg, #a74242, #ff3333);
   transition: width 0.3s ease;
 }
-
-/* on hover */
+.navbar .nav-link.active {
+  color: #d50000;
+  font-weight: 600;
+}
+.navbar .nav-link.active::after,
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
 .navbar .nav-link:hover {
   color: #d50000;
 }
 
-.navbar .nav-link:hover::after {
-  width: 100%;
+/* ================================
+   FOOTER
+================================ */
+.custom-footer {
+  background-color: #d50000;
+}
+.custom-footer p {
+  color: #ffffff;
 }
 
-.custom-h1 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+/* ================================
+   HEADINGS
+================================ */
+.custom-h1,
+.custom-h1-products,
+.custom-h1-product-title,
+.custom-h1-contact,
+.custom-h2-cart {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
-
 .custom-h1-products {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-top: 2rem;
+  margin-top: 2rem;
+}
+.custom-h1-product-title {
+  margin-top: 1px;
+  margin-bottom: 20px;
+}
+.custom-h2-cart {
+  margin-top: 100px;
+  margin-bottom: 2rem;
 }
 
-/* carousel shadow */
-.carousel-item {
-  position: relative;
-}
-
-/* breadcrumb */
+/* ================================
+   BREADCRUMB
+================================ */
 .breadcrumb-item + .breadcrumb-item::before {
-  content: " >> ";   /* custom separator */
-  color: #555;       /* separator color */
-  font-weight: bold; /* make it stand out */
+  content: " >> ";
+  color: #555;
+  font-weight: bold;
 }
-
 .breadcrumb-item a {
   color: #d50000;
   text-decoration: none;
@@ -91,30 +108,18 @@
   color: #333;
   font-weight: 600;
 }
-
-
 .custom-breadcrumb .breadcrumb {
   padding-left: 50px;
-  margin-top: 30px;
-  margin-bottom: 5px;
+  margin: 30px 0 5px;
   justify-content: left;
 }
 
-.custom-h1-product-title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-top: 1px;   
-    margin-bottom: 20px;
+/* ================================
+   CAROUSEL
+================================ */
+.carousel-item {
+  position: relative;
 }
-
-.custom-product-section{
-  margin-bottom: 50px;
-}
-
-/* carousel */
 .carousel-item::after {
   content: "";
   position: absolute;
@@ -125,15 +130,15 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
   z-index: 1;
 }
-
 .carousel-caption {
   position: absolute;
   z-index: 2;
 }
 
-
-/*custom cards*/
-.new-arrivals .custom-card {
+/* ================================
+   CUSTOM CARDS (Products / Arrivals)
+================================ */
+.custom-card {
   width: 100%;
   max-width: 300px;
   height: 350px;
@@ -144,39 +149,12 @@
   border: 2px solid #c3c6ce;
   transition: 0.5s ease-out;
   overflow: visible;
-  margin: auto;
+  margin: auto auto 20px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.custom-products .custom-card {
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border-radius: 20px;
-  background: #f5f5f5;
-  position: relative;
-  padding: 1.2rem;
-  border: 2px solid #c3c6ce;
-  transition: 0.5s ease-out;
-  overflow: visible;
-  margin: auto;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.custom-products .col-md-4 {
-  max-width: 300px;   
-  flex: 0 0 auto;     
-}
-
-.custom-products .row {
-  justify-content: center; 
-  --bs-gutter-x: 1.5rem;    
-  --bs-gutter-y: 1.5rem;    
-}
-
-.new-arrivals .custom-card-img, .custom-products .custom-card-img {
+/* card imgss */
+.custom-card-img {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -184,19 +162,20 @@
   margin-bottom: 0.5rem;
 }
 
-.new-arrivals .custom-card-details, .custom-products .custom-card-details {
+/* caard details */
+.custom-card-details {
   margin-top: 0.5rem;
   color: black;
   display: grid;
 }
-
-.new-arrivals .text-title, .custom-products .text-title {
+.text-title {
   font-size: 1em;
   font-weight: 600;
   font-family: "Raleway", sans-serif;
 }
 
-.new-arrivals .custom-card-button, .custom-products .custom-card-button{
+/* Card Button */
+.custom-card-button {
   transform: translate(-50%, 125%);
   width: 60%;
   border-radius: 1rem;
@@ -213,61 +192,54 @@
   cursor: pointer;
 }
 
-/* Hover Effects */
-.new-arrivals .custom-card:hover, .custom-products .custom-card:hover{
+/* hover border effects for cards */
+.custom-card:hover {
   border-color: #f80000;
   box-shadow: 0 4px 18px rgba(96, 52, 52, 0.25);
 }
-
-.new-arrivals .custom-card:hover .custom-card-button, .custom-products .custom-card:hover .custom-card-button{
+.custom-card:hover .custom-card-button {
   transform: translate(-50%, 50%);
   opacity: 1;
 }
 
+/* ================================
+   PRODUCTS GRID
+================================ */
+.custom-products .col-md-4 {
+  max-width: 300px;
+  flex: 0 0 auto;
+}
+.custom-products .row {
+  justify-content: center;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+.custom-product-section {
+  margin-bottom: 50px;
+}
 .card-title-best-seller {
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    color: #333;
-}
-
-/* for button customized red color */
-.btn-primary {
-    background-color: #d50000;
-    border: none;
-    
-}
-
-.btn-primary:hover {
-  background-color: #b20000;
-}
-
-.btn-primary:active {
-  background-color: #b20000;
-}
-
-.btn-primary:focus {
-  background-color: #b20000;
-  box-shadow: none; 
-}
-
-/* cart */
-/* General Reset */
-.custom-h2-cart {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    color: #333;
-    margin-top: 100px;
-    margin-bottom: 2rem;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
   color: #333;
 }
 
+/* ================================
+   BUTTONS
+================================ */
+.btn-primary {
+  background-color: #d50000;
+  border: none;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: #b20000;
+  box-shadow: none;
+}
 
-/* Cart */
+/* ================================
+   CART PAGE
+================================ */
 .cart-item {
   border-bottom: 1px solid #ddd;
   padding: 20px 0;
@@ -286,8 +258,6 @@ body {
   cursor: pointer;
   color: #666;
 }
-
-/* Summary Box */
 .summary-box {
   background-color: #f8f9fa;
   border: 1px solid #ddd;
@@ -300,4 +270,69 @@ body {
 }
 .checkout-btn:hover {
   background-color: #b20000;
+}
+
+/* ================================
+   CONTACT PAGE
+================================ */
+.about-section {
+  margin-top: 10px;
+}
+.contact-banner {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.contact-banner.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================
+   FLIP CARD (About Page)
+================================ */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flip-card-front {
+  background: #fff;
+}
+.flip-card-front img {
+  max-height: 200px;
+  object-fit: contain;
+}
+.flip-card-back {
+  background: #ffcad4;
+  color: #333;
+  transform: rotateY(180deg);
+  padding: 20px;
 }

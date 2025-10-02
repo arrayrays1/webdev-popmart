@@ -6,12 +6,12 @@
   <title>Popmart - Mofusand</title>
   <link rel="icon" type="image/x-icon" href="../img/favicon.png">
 
-  <!-- Google Fonts -->
+  <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap + Your Styles -->
+  <!-- bootstrap css -->
   <link href="../dist/styles.css" rel="stylesheet">
 </head>
 <body>
@@ -20,7 +20,7 @@
 <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
   <div class="container">
     <a class="navbar-brand" href="bootstrap.html">
-      <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
+      <img src="../img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
     </a>
 
     <!-- Hamburger -->
@@ -31,11 +31,11 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto nav-links">
-        <li class="nav-item"><a class="nav-link" href="bootstrap.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="../bootstrap.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="../cart.html">🛒 Cart</a></li>
       </ul>
     </div>
   </div>
@@ -60,7 +60,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Pastries</h5>
               <p class="card-text">Php 300.00</p>
-              <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Journey</h5>
               <p class="card-text">Php 300.00</p>
-              <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Hippers</h5>
               <p class="card-text">Php 249.00</p>
-              <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Sharks</h5>
               <p class="card-text">Php 399.00</p>
-              <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Tempura</h5>
               <p class="card-text">Php 300.00</p>
-              <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Plushies</h5>
               <p class="card-text">Php 999.00</p>
-              <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Berry</h5>
               <p class="card-text">Php 999.00</p>
-              <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -130,7 +130,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Fluffy</h5>
               <p class="card-text">Php 300.00</p>
-              <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@
 
   <!-- Scripts -->
   <script>
-    // Sticky navbar hide/show on scroll
+   // navbar hide/show on scroll
     let lastScrollTop = 0;
     const navbar = document.getElementById("mainNavbar");
 
@@ -159,7 +159,7 @@
       lastScrollTop = scrollTop;
     });
 
-    // Dynamic breadcrumb and product title
+    //breadcrumb
     const params = new URLSearchParams(window.location.search);
     const productName = params.get("name") || "Product";
 

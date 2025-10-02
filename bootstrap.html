@@ -5,32 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Popmart</title>
   <link rel="icon" type="image/x-icon" href="favicon.png">
-  <!-- Bootstrap CSS (comment out to see plain HTML) -->
-  <!-- for internet: non internet:./node_modules <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Bootstrap CSS -->
+  <!-- For CDN: uncomment below -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- For local: uncomment below -->
   <!-- <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- bootstrap css -->
   <link href="./dist/styles.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
   <div class="container">
+    <!-- logo -->
     <a class="navbar-brand" href="bootstrap.html">
       <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
     </a>
 
-    <!-- Hamburger -->
+    <!-- hamburgr menu -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- navbar links -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto nav-links">
-        <li class="nav-item"><a class="nav-link" href="bootstrap.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="bootstrap.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -40,25 +49,28 @@
   </div>
 </nav>
 
-<!-- HERO CAROUSEL -->
+<!-- ================= HERO CAROUSEL ================= -->
 <header>
   <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- Indicators -->
+
+    <!-- indicators -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
       <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
       <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
     </div>
 
-    <!-- Carousel Items -->
+    <!-- carousel items -->
     <div class="carousel-inner">
-      <div class="carousel-item active" style="background:url('img/banner-1.png')  center/cover no-repeat; height: 600px;">
+      <!-- slide 1 -->
+      <div class="carousel-item active" style="background:url('img/banner-1.png') center/cover no-repeat; height: 600px;">
         <div class="carousel-caption d-none d-md-block">
           <h1>Welcome to Popmart!</h1>
           <p>Discover collectibles</p>
         </div>
       </div>
 
+      <!-- slide 2 -->
       <div class="carousel-item" style="background:url('img/banner-2.png') center/cover no-repeat; height: 600px;">
         <div class="carousel-caption d-none d-md-block">
           <h1>New Arrivals</h1>
@@ -66,6 +78,7 @@
         </div>
       </div>
 
+      <!-- slide 3 -->
       <div class="carousel-item" style="background:url('img/banner-3.png') center/cover no-repeat; height: 600px;">
         <div class="carousel-caption d-none d-md-block">
           <h1>Exclusive Deals</h1>
@@ -74,7 +87,7 @@
       </div>
     </div>
 
-    <!-- Controls -->
+    <!-- carousel controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </button>
@@ -84,12 +97,13 @@
   </div>
 </header>
 
-  <!-- NEW ARRIVALS -->
+<!-- ================= NEW ARRIVALS ================= -->
 <section class="py-5 new-arrivals">
   <div class="container">
     <h1 class="text-center mb-4 custom-h1">【NEW ARRIVALS】</h1>
 
     <div class="row g-4 justify-content-center">
+      <!-- product 1 -->
       <div class="col-md-3">
         <div class="custom-card">
           <img src="img/new-arrival-1.png" alt="Product 1" class="custom-card-img">
@@ -100,6 +114,7 @@
         </div>
       </div>
 
+      <!-- product 2 -->
       <div class="col-md-3">
         <div class="custom-card">
           <img src="img/new-arrival-2.png" alt="Product 2" class="custom-card-img">
@@ -110,6 +125,7 @@
         </div>
       </div>
 
+      <!-- product 3 -->
       <div class="col-md-3">
         <div class="custom-card">
           <img src="img/new-arrival-3.png" alt="Product 3" class="custom-card-img">
@@ -120,70 +136,73 @@
         </div>
       </div>
 
+      <!-- product 4 -->
       <div class="col-md-3">
         <div class="custom-card">
-          <img src="img/new-arrival-4.png" alt="Product 3" class="custom-card-img">
+          <img src="img/new-arrival-4.png" alt="Product 4" class="custom-card-img">
           <div class="custom-card-details">
             <p class="text-title">SMISKI Touch Light Lamp</p>
           </div>
           <button class="custom-card-button" onclick="window.location.href='products-tab/products-smiski.html'">View</button>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- BEST SELLERS -->
-  <section class="py-5">
-    <div class="container">
-      <h1 class="text-center mb-4 custom-h1">【BEST SELLERS】</h1>
+<!-- ================= BEST SELLERS ================= -->
+<section class="py-5">
+  <div class="container">
+    <h1 class="text-center mb-4 custom-h1">【BEST SELLERS】</h1>
 
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="img/best-seller-1.png" class="card-img-top" alt="Product 1">
-            <div class="card-body">
-              <h5 class="card-title-best-seller">SMISKI Museum Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="img/best-seller-2.png" class="card-img-top" alt="Product 2">
-            <div class="card-body">
-              <h5 class="card-title-best-seller">HIRONO Little Mischief</h5>
-              <p class="card-text">Php 500.00</p>
-              <a href="cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="img/best-seller-3.png" class="card-img-top" alt="Product 3">
-            <div class="card-body">
-              <h5 class="card-title-best-seller">MOFUSAND Dessert Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
+    <div class="row g-4">
+      <!-- best seller 1 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="img/best-seller-1.png" class="card-img-top" alt="Product 1">
+          <div class="card-body">
+            <h5 class="card-title-best-seller">SMISKI Museum Series</h5>
+            <p class="card-text">Php 300.00</p>
+            <a href="cart.html" class="btn btn-primary w-100">Add to Cart</a>
           </div>
         </div>
       </div>
 
+      <!-- best seller 2 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="img/best-seller-2.png" class="card-img-top" alt="Product 2">
+          <div class="card-body">
+            <h5 class="card-title-best-seller">HIRONO Little Mischief</h5>
+            <p class="card-text">Php 500.00</p>
+            <a href="cart.html" class="btn btn-primary w-100">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- best seller 3 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="img/best-seller-3.png" class="card-img-top" alt="Product 3">
+          <div class="card-body">
+            <h5 class="card-title-best-seller">MOFUSAND Dessert Series</h5>
+            <p class="card-text">Php 300.00</p>
+            <a href="cart.html" class="btn btn-primary w-100">Add to Cart</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="custom-footer text-center py-3">
-    <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
-  </footer>
+<!-- ================= FOOTER ================= -->
+<footer class="custom-footer text-center py-3">
+  <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
+</footer>
 
-
-
-<!-- scripts -->
-  <script>
+<!-- ================= SCRIPTS ================= -->
+<script>
+  // navbar hide/show on scroll
   let lastScrollTop = 0;
   const navbar = document.getElementById("mainNavbar");
 
@@ -191,10 +210,10 @@
     let scrollTop = window.scrollY;
 
     if (scrollTop > lastScrollTop) {
-      // scrolling down
+      // scroll down - hide navbar
       navbar.classList.add("navbar-hidden");
     } else {
-      // scrolling up
+      // scrooll up - show navbar
       navbar.classList.remove("navbar-hidden");
     }
 
@@ -202,6 +221,7 @@
   });
 </script>
 
+<!-- bootstrap JS (local build) -->
 <script src="./dist/bootstrap.bundle.min.js"></script>
 </body>
 </html>

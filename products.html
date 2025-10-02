@@ -5,139 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Popmart - Products</title>
   <link rel="icon" type="image/x-icon" href="favicon.png">
-  <!-- google fonts -->
+
+  <!-- google gonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   
+  <!-- bootstrap csss -->
   <link href="./dist/styles.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="bootstrap.html">
-      <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
-    </a>
+  <!-- ================= NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
+    <div class="container">
+      <!-- brand logo -->
+      <a class="navbar-brand" href="bootstrap.html">
+        <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
+      </a>
 
-    <!-- Hamburger -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- hamburger menu -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto nav-links">
-        <li class="nav-item"><a class="nav-link" href="bootstrap.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- PRODUCTS -->
-<section class="py-5 custom-products">
-  <div class="container">
-    <h1 class="text-center mb-4 custom-h1-products">PRODUCTS</h1>
-
-    <div class="row justify-content-center">
-      <div class="col-md-4">
-        <div class="custom-card">
-          <img src="img/products-img-banner/smiski.png" alt="Product 1" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">SMISKI</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-smiski.html'">View</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="custom-card">
-          <img src="img/products-img-banner/mofusand.png" alt="Product 2" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">MOFUSAND</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-mofusand.html'">View</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="custom-card">
-          <img src="img/products-img-banner/sonny-angel.png" alt="Product 3" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">SONNY ANGEL</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-sAngel.html'">View</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="custom-card">
-          <img src="img/products-img-banner/miffy.png" alt="Product 3" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">MIFFY</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-miffy.html'">View</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="custom-card">
-          <img src="img/products-img-banner/hirono.png" alt="Product 3" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">HIRONO</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-hirono.html'">View</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="custom-card">
-          <img src="img/products-img-banner/crybaby.png" alt="Product 3" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">CRYBABY</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-crybaby.html'">View</button>
-        </div>
+      <!-- navigation links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item"><a class="nav-link" href="bootstrap.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">🛒 Cart</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
-</section>
+  </nav>
 
+  <!-- ================= PRODUCTS SECTION ================= -->
+  <section class="py-5 custom-products">
+    <div class="container">
+      <h1 class="text-center mb-4 custom-h1-products">PRODUCTS</h1>
 
+      <div class="row justify-content-center">
 
-  <!-- FOOTER -->
+        <!-- product 1 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/smiski.png" alt="Product 1" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">SMISKI</p>
+            </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-smiski.html'">View</button>
+          </div>
+        </div>
+
+        <!-- product 2 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/mofusand.png" alt="Product 2" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">MOFUSAND</p>
+            </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-mofusand.html'">View</button>
+          </div>
+        </div>
+
+        <!-- product 3 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/sonny-angel.png" alt="Product 3" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">SONNY ANGEL</p>
+            </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-sAngel.html'">View</button>
+          </div>
+        </div>
+
+        <!-- product 4 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/miffy.png" alt="Product 4" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">MIFFY</p>
+            </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-miffy.html'">View</button>
+          </div>
+        </div>
+
+        <!-- product 5 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/hirono.png" alt="Product 5" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">HIRONO</p>
+            </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-hirono.html'">View</button>
+          </div>
+        </div>
+
+        <!-- product 6 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/crybaby.png" alt="Product 6" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">CRYBABY</p>
+            </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-crybaby.html'">View</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
   <footer class="custom-footer text-center py-3">
     <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
   </footer>
 
-
-
-<!-- scripts -->
+  <!-- ================= SCRIPTS ================= -->
   <script>
-  let lastScrollTop = 0;
-  const navbar = document.getElementById("mainNavbar");
+    // navbar hide/show on scroll
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("mainNavbar");
 
-  window.addEventListener("scroll", function () {
-    let scrollTop = window.scrollY;
+    window.addEventListener("scroll", function () {
+      let scrollTop = window.scrollY;
 
-    if (scrollTop > lastScrollTop) {
-      // scrolling down
-      navbar.classList.add("navbar-hidden");
-    } else {
-      // scrolling up
-      navbar.classList.remove("navbar-hidden");
-    }
+      if (scrollTop > lastScrollTop) {
+        // scroll down - hide navbar
+        navbar.classList.add("navbar-hidden");
+      } else {
+        // scroll up - show navbar
+        navbar.classList.remove("navbar-hidden");
+      }
 
-    lastScrollTop = scrollTop;
-  });
-</script>
+      lastScrollTop = scrollTop;
+    });
+  </script>
 
-<script src="./dist/bootstrap.bundle.min.js"></script>
+<!-- bootstrap JS (local build) -->
+  <script src="./dist/bootstrap.bundle.min.js"></script>
 </body>
 </html>
