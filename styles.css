@@ -376,3 +376,17 @@ body {
   background-color: #d50000;
   border-color: #d50000;
 }
+
+/* form validation colors */
+.text-danger.small { 
+  font-size: 0.85rem; 
+  margin-top: 0.25rem;
+}
+input.is-invalid, textarea.is-invalid { 
+  border-color: #dc3545; 
+  box-shadow: none; 
+}
+  input.is-valid, textarea.is-valid { 
+    border-color: #198754; 
+    box-shadow: none;
+  }

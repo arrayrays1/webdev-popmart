@@ -56,20 +56,20 @@
       </div>
 
       <div class="col-lg-6">
-        <form class="p-4 bg-light rounded-4 shadow-sm contact-form">
+        <form id="contactForm" class="p-4 bg-light rounded-4 shadow-sm contact-form" novalidate>
           <div class="mt-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
           </div>
 
           <div class="mt-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="someone@email.com">
+            <input type="text" class="form-control" id="email" name="email" placeholder="someone@email.com">
           </div>
 
           <div class="mt-3">
             <label for="message" class="form-label">Your Message</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Write your message..."></textarea>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message..."></textarea>
           </div>
 
           <div class="mt-4 text-end">
@@ -154,9 +154,86 @@
 <script src="./dist/jquery.min.js"></script>
 <script src="./dist/bootstrap.bundle.min.js"></script>
 
+<!-- jquery validation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+
 <!-- ================= SCRIPTS ================= -->
+
 <script>
-  // navbar hide/show on scroll
+$(function () {
+  $.validator.addMethod("validName", function (value, element) {
+    // if there are extra spaces, invalid
+    if (/^\s|\s$/.test(value)) return false;
+    const trimmed = $.trim(value);
+    return this.optional(element) || /^[A-Za-z]+(?: [A-Za-z]+)*$/.test(trimmed);
+  }, "Please enter a valid name (letters only, no extra spaces).");
+
+  $.validator.addMethod("validCustomEmail", function (value, element) {
+    // if there are extra spaces, invalid
+    if (/^\s|\s$/.test(value)) return false;
+    value = $.trim(value);
+    if (this.optional(element)) return true;
+    const allowedPattern = /^[A-Za-z0-9._@-]+$/;
+    return allowedPattern.test(value) && /@/.test(value) && /\.com$/i.test(value);
+  }, "Email may contain letters, numbers, and '_''@''.''-' only, must include '@' and end with '.com'.");
+
+  $("#contactForm").validate({
+    onkeyup: function (element) { $(element).valid(); },
+    onfocusout: function (element) { $(element).valid(); },
+
+    rules: {
+      name: {
+        required: true,
+        validName: true
+      },
+      email: {
+        required: true,
+        validCustomEmail: true
+      },
+      message: {
+        required: true,
+        minlength: 10,
+        normalizer: function (value) { return $.trim(value); }
+      }
+    },
+
+    messages: {
+      name: { required: "Please enter your name." },
+      email: {
+        required: "Please enter your email address.",
+        validCustomEmail: "Please enter a valid email (letters, numbers, '_''@''.''-' and must end with .com)."
+      },
+      message: {
+        required: "Please enter your message.",
+        minlength: "Your message must be at least 10 characters long."
+      }
+    },
+
+    errorElement: "div",
+    errorClass: "text-danger small",
+    errorPlacement: function (error, element) {
+      $(error).hide().insertAfter(element).fadeIn(120);
+    },
+    highlight: function (element) {
+      $(element).addClass("is-invalid").removeClass("is-valid");
+    },
+    unhighlight: function (element) {
+      $(element).removeClass("is-invalid").addClass("is-valid");
+    },
+
+    submitHandler: function (form) {
+      const $msg = $('<div class="alert alert-success mt-3" role="alert">Message successfully sent!</div>');
+      $msg.hide().insertBefore(form).fadeIn(180).delay(1400).fadeOut(300, function() { $(this).remove(); });
+      form.reset();
+      $(form).find('.is-valid').removeClass('is-valid');
+    }
+  });
+});
+</script>
+
+<script>
+  //scroll hide/show navbar
   let lastScrollTop = 0;
   const navbar = document.getElementById("mainNavbar");
 
@@ -181,7 +258,6 @@
     banner.classList.add("show");
   }, 100); 
 });
-
 </script>
 
 </body>
