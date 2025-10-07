@@ -1632,5 +1632,36 @@ body {
   transform: rotateY(180deg);
   padding: 20px;
 }
+/* ================= CONTACT FORM SECTION ================= */
+.contact-img {
+  animation: float 3s ease-in-out infinite;
+  margin-left: 75px;
+}
+/* for animation image */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+.contact-form {
+  background-color: #f9fafb;
+  transition: box-shadow 0.3s ease;
+}
+.contact-form:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.contact-form input,
+.contact-form textarea {
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+.contact-form button {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.contact-form button:hover {
+  background-color: #d50000;
+  border-color: #d50000;
+}
 
 /*# sourceMappingURL=styles.css.map */

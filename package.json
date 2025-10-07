@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "bootstrap": "^5.3.8",
-    "bulma": "^1.0.4"
+    "bulma": "^1.0.4",
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
@@ -21,5 +21,5 @@
   "scripts": {
     "build:css": "postcss styles.css -o dist/styles.css",
     "watch:css": "postcss styles.css -o dist/styles.css --watch"
-}
+  }
 }
