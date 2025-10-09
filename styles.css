@@ -377,7 +377,10 @@ body {
   border-color: #d50000;
 }
 
-/* form validation colors */
+
+/* ================================
+         FORM VALIDATIONS
+================================ */
 .text-danger.small { 
   font-size: 0.85rem; 
   margin-top: 0.25rem;
@@ -390,3 +393,101 @@ input.is-invalid, textarea.is-invalid {
     border-color: #198754; 
     box-shadow: none;
   }
+
+/* ================================
+   LOGIN MODAL
+================================ */
+.login-modal {
+  border-radius: 20px;
+  border: none;
+  background-color: #fff;
+  max-width: 420px;
+  margin: auto;
+}
+
+.login-logo {
+  width: 150px;
+}
+
+.login-modal h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+.login-modal .form-control {
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+}
+
+.login-modal .form-control:focus {
+  border-color: #d50000;
+  box-shadow: none;
+}
+
+.login-modal .btn-danger {
+  background-color: #d50000;
+  border: none;
+  font-weight: 600;
+}
+
+.login-modal .btn-danger:hover {
+  background-color: #b20000;
+}
+
+.login-modal .login-icon {
+  position: absolute;
+  top: 70%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.login-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1rem;
+}
+
+/* hide browser default password toggle (edge/chrome) */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 70%;              
+  right: 15px;           
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #b5b5b5;
+  transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: #e60000;
+}
+
+#loginPassword {
+  padding-right: 45px;
+}
+
+#loginEmail {
+  padding-right: 45px;
+}
+
+.form-control:focus + .login-icon,
+.form-control:focus ~ .toggle-password {
+  color: #d50000;
+}
