@@ -149,7 +149,7 @@
   </div>
 </section>
 
-<!-- ================= LOGIN MODAL ================= -->
+<!-- LOGIN MODAL -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content login-modal">
@@ -159,30 +159,91 @@
           <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
 
-        <form id="loginForm" class="text-start">
-          <div class="mb-3 position-relative">
+        <form id="loginForm" class="text-start" novalidate>
+          <div class="mt-3 position-relative">
             <label for="loginEmail" class="form-label fw-semibold">Email</label>
-            <input type="email" class="form-control" id="loginEmail" placeholder="name@email.com" required>
+            <input type="email" class="form-control pe-5" id="loginEmail" name="loginEmail"
+                   placeholder="name@email.com" required>
             <i class="bi bi-envelope login-icon right"></i>
           </div>
-          <div class="mb-3 position-relative">
-            <label for="loginPassword" class="form-label fw-semibold">Password</label>
-            <input type="password" class="form-control" id="loginPassword"
-              placeholder="Enter your password" autocomplete="off" required>
-            <i class="bi bi-eye toggle-password"></i> <!-- eye icon for toggling password -->
-          </div>
 
-          <button type="submit" class="btn btn-danger w-100 rounded-pill mt-2">Login</button>
+          <div class="mt-3 position-relative">
+            <label for="loginPassword" class="form-label fw-semibold">Password</label>
+            <input type="password" class="form-control pe-5" id="loginPassword" name="loginPassword" placeholder="Enter your password" autocomplete="off" required>
+            <i class="bi bi-eye toggle-password"></i>
+          </div>
+          
+
+          <button type="submit" class="btn btn-danger w-100 rounded-pill mt-4">Login</button>
         </form>
 
         <p class="mt-3 mb-0 small">
           Don’t have an account?
-          <a href="#" class="text-decoration-none fw-semibold text-primary">Sign Up Here</a>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal"
+             class="text-decoration-none fw-semibold text-primary">Sign Up here</a>
         </p>
       </div>
     </div>
   </div>
 </div>
+
+<!-- SIGNUP MODAL -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content signup-modal">
+      <div class="modal-body text-center p-5">
+        <h2 class="fw-bold mb-4">Create your account</h2>
+
+        <form id="signupForm" class="text-start" novalidate>
+          <div class="row g-2">
+            <div class="mt-3 position-relative">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="first name" required>
+            </div>
+            <div class="mt-3 position-relative">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="last name" required>
+            </div>
+          </div>
+
+          <div class="mt-3 position-relative">
+            <label for="signupEmail" class="form-label">Email Address</label>
+            <input type="text" class="form-control" id="signupEmail" name="signupEmail" placeholder="someone@email.com" required>
+          </div>
+
+          <div class="mt-3 position-relative">
+            <label for="contactNumber" class="form-label">Contact Number</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light" id="countryCode">+63</span>
+              <input type="text" class="form-control" id="contactNumber" name="contactNumber" placeholder="9XXXXXXXXX" maxlength="10" inputmode="numeric" required>
+            </div>
+          </div>
+
+          <div class="mt-3 position-relative">
+            <label for="signupPassword" class="form-label">Password</label>
+            <input type="password" class="form-control pe-5" id="signupPassword" name="signupPassword" placeholder="Enter your password" autocomplete="off" required>
+            <i class="bi bi-eye toggle-password icon-eye"></i>
+          </div>
+
+          <div class="mt-3 position-relative">
+            <label for="confirmPassword" class="form-label">Re-type your password</label>
+            <input type="password" class="form-control pe-5" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="off" required>
+            <i class="bi bi-eye toggle-password icon-eye"></i>
+          </div>
+
+          <button type="submit" class="btn btn-danger w-100 rounded-pill mt-4">Sign Up</button>
+        </form>
+
+        <p class="mt-3 mb-0 small">
+          Already have an account?
+          <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal" class="text-decoration-none fw-semibold text-primary">Login Here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- ================= FOOTER ================= -->
 <footer class="custom-footer text-center py-3">
@@ -206,6 +267,8 @@ $(function () {
     // if there are extra spaces, invalid
     if (/^\s|\s$/.test(value)) return false;
     const trimmed = $.trim(value);
+    // if less than 2 characters, invalid
+    if (trimmed.length < 2) return false;
     return this.optional(element) || /^[A-Za-z]+(?: [A-Za-z]+)*$/.test(trimmed);
   }, "Please enter a valid name (letters only, no extra spaces).");
 
@@ -213,9 +276,23 @@ $(function () {
     // if there are extra spaces, invalid
     if (/^\s|\s$/.test(value)) return false;
     value = $.trim(value);
-    if (this.optional(element)) return true;
+    // allowed characters: letters, numbers, '_', '.', '@', '-'
     const allowedPattern = /^[A-Za-z0-9._@-]+$/;
-    return allowedPattern.test(value) && /@/.test(value) && /\.com$/i.test(value);
+    if (!allowedPattern.test(value)) return false;
+    // must contain '@' and end with '.com'
+    if (!/@/.test(value) || !/\.com$/i.test(value)) return false;
+    // split email into parts
+    const parts = value.split("@");
+    if (parts.length !== 2) return false; // only one @ is allowed
+    const localPart = parts[0]; // before @
+    const domainPart = parts[1].replace(/\.com$/i, ""); // between @ and .com
+    // both sides must have at least one valid character
+    if (localPart.length < 1 || domainPart.length < 1) return false;
+    // domain part must contain only valid characters and not start/end with '.'
+    if (!/^[A-Za-z0-9.-]+$/.test(domainPart)) return false;
+    if (/^\./.test(domainPart) || /\.$/.test(domainPart)) return false;
+    // message if invalid
+    return true;
   }, "Email may contain letters, numbers, and '_''@''.''-' only, must include '@' and end with '.com'.");
 
   $("#contactForm").validate({
@@ -273,6 +350,140 @@ $(function () {
 </script>
 
 <script>
+$(function () {
+  // validation rules (for login & signup) 
+  $.validator.addMethod("validName", function (value, element) {
+    if (/^\s|\s$/.test(value)) return false;
+    const trimmed = $.trim(value);
+    if (trimmed.length < 2) return false;
+    return this.optional(element) || /^[A-Za-z]+(?: [A-Za-z]+)*$/.test(trimmed);
+  }, "Please enter a valid name (letters only, no extra spaces).");
+
+  $.validator.addMethod("validCustomEmail", function (value, element) {
+    if (/^\s|\s$/.test(value)) return false;
+    value = $.trim(value);
+    const allowedPattern = /^[A-Za-z0-9._@-]+$/;
+    if (!allowedPattern.test(value)) return false;
+    if (!/@/.test(value) || !/\.com$/i.test(value)) return false;
+    const parts = value.split("@");
+    if (parts.length !== 2) return false;
+    const local = parts[0];
+    const domain = parts[1].replace(/\.com$/i, "");
+    if (local.length < 1 || domain.length < 1) return false;
+    if (!/^[A-Za-z0-9.-]+$/.test(domain) || /^\./.test(domain) || /\.$/.test(domain)) return false;
+    return true;
+  }, "Please enter a valid email address.");
+
+  $.validator.addMethod("validContact", function (value, element) {
+    return /^9\d{9}$/.test(value);
+  }, "Enter a 10-digit number starting with 9.");
+
+  $.validator.addMethod("strongPassword", function (value, element) {
+    return /^(?=.*[A-Z])(?=.*\d).{8,}$/.test(value);
+  }, "At least 8 characters, one uppercase and one number.");
+
+  // === Signup Form Validation ===
+  $("#signupForm").validate({
+    onkeyup: function (el) { $(el).valid(); },
+    onfocusout: function (el) { $(el).valid(); },
+    rules: {
+      firstName: { required: true, validName: true },
+      lastName: { required: true, validName: true },
+      signupEmail: { required: true, validCustomEmail: true },
+      contactNumber: { required: true, validContact: true },
+      signupPassword: { required: true, strongPassword: true },
+      confirmPassword: { required: true, equalTo: "#signupPassword" }
+    },
+    messages: {
+      firstName: { required: "Please enter your first name." },
+      lastName: { required: "Please enter your last name." },
+      signupEmail: { required: "Please enter your email address." },
+      contactNumber: { required: "Please enter your contact number." },
+      signupPassword: { required: "Please enter your password." },
+      confirmPassword: { required: "Please confirm your password.", equalTo: "Passwords do not match." }
+    },
+    errorElement: "div",
+    errorClass: "text-danger small",
+    errorPlacement: function (error, element) {
+      //miao
+    const container = element.closest('.position-relative, .input-group');
+    if (container.length) {
+      error.insertAfter(container);
+    } else {
+      error.insertAfter(element);
+    }
+    $(error).hide().fadeIn(120);
+  },
+    highlight: function (el) {
+      $(el).addClass("is-invalid").removeClass("is-valid");
+    },
+    unhighlight: function (el) {
+      $(el).removeClass("is-invalid").addClass("is-valid");
+    },
+    submitHandler: function (form) {
+      const msg = $('<div class="alert alert-success mt-3" role="alert">Account created successfully!</div>');
+      msg.hide().insertBefore(form).fadeIn(200).delay(1500).fadeOut(300, function(){ $(this).remove(); });
+      form.reset();
+      $(form).find('.is-valid').removeClass('is-valid');
+    }
+  });
+
+  // === Login Form Validation ===
+  $("#loginForm").validate({
+    onkeyup: function (el) { $(el).valid(); },
+    onfocusout: function (el) { $(el).valid(); },
+    rules: {
+      loginEmail: { required: true, validCustomEmail: true },
+      loginPassword: { required: true }
+    },
+    messages: {
+      loginEmail: { required: "Please enter your email." },
+      loginPassword: { required: "Please enter your password." }
+    },
+    errorElement: "div",
+    errorClass: "text-danger small",
+    errorPlacement: function (error, element) {
+      //miao
+    const container = element.closest('.position-relative, .input-group');
+    if (container.length) {
+      error.insertAfter(container);
+    } else {
+      error.insertAfter(element);
+    }
+    $(error).hide().fadeIn(120);
+  },
+    highlight: function (el) {
+      $(el).addClass("is-invalid").removeClass("is-valid");
+    },
+    unhighlight: function (el) {
+      $(el).removeClass("is-invalid").addClass("is-valid");
+    },
+    submitHandler: function (form) {
+      $('#loginModal').modal('hide');
+      alert('Login successful!');
+      form.reset();
+      $(form).find('.is-valid').removeClass('is-valid');
+    }
+  });
+
+  // === Password Toggle (Show/Hide) ===
+  $(document).on('click', '.toggle-password', function () {
+    const input = $(this).closest('.position-relative').find('input');
+    const type = input.attr('type') === 'password' ? 'text' : 'password';
+    input.attr('type', type);
+    $(this).toggleClass('bi-eye bi-eye-slash');
+  });
+
+  // === Contact Number Auto-Filter (for signup only) ===
+  $('#contactNumber').on('input', function () {
+    this.value = this.value.replace(/\D/g, '').slice(0, 10);
+    $(this).valid();
+  });
+});
+</script>
+
+
+<script>
   //scroll hide/show navbar
   let lastScrollTop = 0;
   const navbar = document.getElementById("mainNavbar");
@@ -297,20 +508,6 @@ $(function () {
   setTimeout(() => {
     banner.classList.add("show");
   }, 100); 
-});
-</script>
-
-<script>
-  //password toggle function
-$(document).ready(function() {
-  $('.toggle-password').on('click', function() {
-    const input = $('#loginPassword');
-    const type = input.attr('type') === 'password' ? 'text' : 'password';
-    input.attr('type', type);
-
-    // Toggle icon classes
-    $(this).toggleClass('bi-eye bi-eye-slash');
-  });
 });
 </script>
 

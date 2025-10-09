@@ -475,6 +475,10 @@ input::-webkit-credentials-auto-fill-button {
   transition: color 0.2s ease;
 }
 
+.icon-eye {
+  top: 72%;
+}
+
 .toggle-password:hover {
   color: #e60000;
 }
@@ -490,4 +494,20 @@ input::-webkit-credentials-auto-fill-button {
 .form-control:focus + .login-icon,
 .form-control:focus ~ .toggle-password {
   color: #d50000;
+}
+
+/* Remove default validation icons for valid/invalid states */
+input.is-valid,
+input.is-invalid,
+textarea.is-valid,
+textarea.is-invalid {
+  background-image: none !important;
+  background-repeat: none;
+  background-position: unset;
+}
+
+/* Also remove pseudo elements some browsers add */
+input.is-valid:after,
+input.is-invalid:after {
+  content: none !important;
 }
