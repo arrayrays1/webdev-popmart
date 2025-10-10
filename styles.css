@@ -422,13 +422,13 @@ input.is-valid, textarea.is-valid {
   border: 1px solid #ccc;
 }
 
-.login-modal .btn-danger {
+.login-modal .btn-danger, .signup-modal .btn-danger{
   background-color: #d50000;
   border: none;
   font-weight: 600;
 }
 
-.login-modal .btn-danger:hover {
+.login-modal .btn-danger:hover, .signup-modal .btn-danger:hover {
   background-color: #b20000;
 }
 
