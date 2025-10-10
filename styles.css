@@ -389,13 +389,13 @@ input.is-invalid, textarea.is-invalid {
   border-color: #dc3545; 
   box-shadow: none; 
 }
-  input.is-valid, textarea.is-valid { 
+input.is-valid, textarea.is-valid { 
     border-color: #198754; 
     box-shadow: none;
   }
 
 /* ================================
-   LOGIN MODAL
+        LOGIN/SIGNUP MODAL
 ================================ */
 .login-modal {
   border-radius: 20px;
@@ -420,11 +420,6 @@ input.is-invalid, textarea.is-invalid {
   padding: 10px 12px;
   font-size: 0.95rem;
   border: 1px solid #ccc;
-}
-
-.login-modal .form-control:focus {
-  border-color: #d50000;
-  box-shadow: none;
 }
 
 .login-modal .btn-danger {
@@ -496,7 +491,7 @@ input::-webkit-credentials-auto-fill-button {
   color: #d50000;
 }
 
-/* Remove default validation icons for valid/invalid states */
+/* remove default validation icons*/
 input.is-valid,
 input.is-invalid,
 textarea.is-valid,
@@ -506,7 +501,7 @@ textarea.is-invalid {
   background-position: unset;
 }
 
-/* Also remove pseudo elements some browsers add */
+/* removes elements some browsers add */
 input.is-valid:after,
 input.is-invalid:after {
   content: none !important;
