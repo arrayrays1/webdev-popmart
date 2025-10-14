@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popmart - Miffy</title>
-  <link rel="icon" type="image/x-icon" href="../img/favicon.png">
-
+  <title>Popmart - My Cart</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
   <!-- bootstrap icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <!-- bootstrap css -->
-  <link href="../dist/styles.css" rel="stylesheet">
+  <link href="./dist/styles.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="bootstrap.html">
-      <img src="../img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="bootstrap.php">
+      <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
     </a>
 
-    <!-- hamburger -->
+    <!-- Hamburger -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,11 +32,11 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto nav-links">
-        <li class="nav-item"><a class="nav-link" href="../bootstrap.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="../products.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="../cart.html"> <i class="bi bi-cart"></i> Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="bootstrap.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="cart.php"> <i class="bi bi-cart"></i> Cart</a></li>
         <li class="nav-item">
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-circle"></i> Login</a>
         </li>
@@ -46,109 +45,76 @@
   </div>
 </nav>
 
+<body>
+<div class="container my-5">
+    <h2 class="mb-4 custom-h2-cart">My Cart</h1>
+      <p class="mb-4 text-center">Your cart is currently empty.</p>
+<!--
+  <div class="row">
+    // left column (cart items)
+    <div class="col-lg-8">
+      <div class="d-flex align-items-center mb-3">
+        <input type="checkbox" class="form-check-input me-2">
+        <label class="form-check-label">Select all</label>
+      </div>
 
-  <!-- BREADCRUMB -->
-<nav aria-label="breadcrumb" class="custom-breadcrumb mt-5 pt-4">
-  <ol class="breadcrumb container">
-    <li class="breadcrumb-item"><a href="../products.html">Products</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Miffy</li>
-  </ol>
-</nav>
-  <!-- PRODUCT SECTION -->
-  <section class="py-1 custom-product-section">
-    <div class="container">
-      <h1 id="product-title" class="text-center mb-4 custom-h1-product-title">MIFFY</h1>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-miffy/miffy-1.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MIFFY Doing Things Blind Box</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
+      //cart item
+      <div class="d-flex align-items-start border-bottom py-3">
+        <input type="checkbox" class="form-check-input me-3 mt-2">
+        <img src="img/products-img-banner/products-mofusand/mofusand-1.png" alt="Mofusand Pastries" class="me-3" style="width: 150px; height: auto;">
+        <div class="flex-grow-1">
+          <h5 class="mb-1">MOFUSAND Pastries</h5>
+          <p class="text-muted mb-1">1 Box</p>
+          <p class="fw-bold">Php 300.00</p>
+          <div class="d-flex align-items-center">
+            <button class="btn btn-outline-secondary btn-sm">-</button>
+            <input type="text" class="form-control form-control-sm mx-2 text-center" value="1" style="width: 60px;">
+            <button class="btn btn-outline-secondary btn-sm">+</button>
+            <a href="#" class="ms-3 text-danger text-decoration-none">REMOVE</a>
           </div>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-miffy/miffy-2.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MIFFY Goes Outside Blind Box</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-miffy/miffy-3.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MIFFY in the Snow Blind Box</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-miffy/miffy-4.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MIFFY and friends Bundle of Lights</h5>
-              <p class="card-text">Php 499.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-miffy/miffy-5.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MIFFY 14-inch Stuffy Plush</h5>
-              <p class="card-text">Php 799.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-miffy/miffy-6.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MIFFY Bluetooth Earphones</h5>
-              <p class="card-text">Php 1,499.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-miffy/miffy-7.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MIFFY Silicone Storage Bag</h5>
-              <p class="card-text">Php 349.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-miffy/miffy-8.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MIFFY Character Sling Bag</h5>
-              <p class="card-text">Php 699.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
+      //another cart item
+      <div class="d-flex align-items-start border-bottom py-3">
+        <input type="checkbox" class="form-check-input me-3 mt-2">
+        <img src="img/products-img-banner/products-smiski/smiski-5.png" alt="Smiski Birthday" class="me-3" style="width: 150px; height: auto;">
+        <div class="flex-grow-1">
+          <h5 class="mb-1">SMISKI Birthday Series</h5>
+          <p class="text-muted mb-1">1 Box</p>
+          <p class="fw-bold">Php 300.00</p>
+          <div class="d-flex align-items-center">
+            <button class="btn btn-outline-secondary btn-sm">-</button>
+            <input type="text" class="form-control form-control-sm mx-2 text-center" value="1" style="width: 60px;">
+            <button class="btn btn-outline-secondary btn-sm">+</button>
+            <a href="#" class="ms-3 text-danger text-decoration-none">REMOVE</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+
+    // right rolumn (summary) 
+    <div class="col-lg-4">
+      <div class="border p-4">
+        <div class="d-flex justify-content-between mb-2">
+          <span>Subtotal</span>
+          <span>Php 600.00</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span>Shipping</span>
+          <span class="text-muted">Calculated at next step</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between fw-bold mb-3">
+          <span>Total(2)</span>
+          <span>Php 600.00 </span>
+        </div>
+        <button class="btn btn-primary w-100">CHECK OUT</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
 
 <!-- LOGIN MODAL -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -157,7 +123,7 @@
       <div class="modal-body text-center p-5">
         <h2 class="fw-bold mb-2">WELCOME TO</h2>
         <div class="mb-4">
-          <img src="../img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
 
         <form id="loginForm" class="text-start" novalidate>
@@ -193,7 +159,7 @@
     <div class="modal-content signup-modal">
       <div class="modal-body text-center p-5">
         <div class="mb-2">
-          <img src="../img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
         <h2 class="fw-bold mb-4">Create your account</h2>
 
@@ -246,29 +212,19 @@
   </div>
 </div>
 
-
 <!-- jquery and javascript -->
-<script src="../dist/jquery.min.js"></script>
-<script src="../dist/bootstrap.bundle.min.js"></script>
+<script src="./dist/jquery.min.js"></script>
+<script src="./dist/bootstrap.bundle.min.js"></script>
 
 <!-- jquery validation for online -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script> -->
 
 <!-- jquery validations locally -->
-<script src="../dist/jquery.validate.min.js"></script>
-<script src="../dist/additional-methods.min.js"></script>
+<script src="./dist/jquery.validate.min.js"></script>
+<script src="./dist/additional-methods.min.js"></script>
 
 <!-- ================= SCRIPTS ================= -->
-  <script>
-    // breadcrumb
-    const params = new URLSearchParams(window.location.search);
-    const productName = params.get("name") || "Product";
-
-    document.getElementById("breadcrumb-product").textContent = productName;
-    document.getElementById("product-title").textContent = productName;
-    document.getElementById("product-card-title").textContent = productName;
-  </script>
 
 <script>
 // defines contact form validation: name, email, message
@@ -310,7 +266,7 @@ $(function () {
     if (!/^[A-Za-z0-9.-]+$/.test(domainTrimmed)) return false;
     if (/^\./.test(domainTrimmed) || /\.$/.test(domainTrimmed)) return false;
     if (/^\-/.test(domainTrimmed) || /\-$/.test(domainTrimmed)) return false;
-    if (/\.\./.test(domainTrimmed)) return false; // no consecutive dots
+    if (/\.\./.test(domainTrimmed)) return false;
 
     // invalid ".com.com" / any ".com." inside domainFull
     if (/\.com\./i.test(domainFull)) return false;

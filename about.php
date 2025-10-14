@@ -22,7 +22,7 @@
   <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
     <div class="container">
       <!-- BRAND LOGO -->
-      <a class="navbar-brand" href="bootstrap.html">
+      <a class="navbar-brand" href="bootstrap.php">
         <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
       </a>
 
@@ -35,11 +35,11 @@
       <!-- NAVIGATION LINKS -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto nav-links">
-          <li class="nav-item"><a class="nav-link" href="bootstrap.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="cart.html"> <i class="bi bi-cart"></i> Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="bootstrap.php">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.php">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.php"> <i class="bi bi-cart"></i> Cart</a></li>
           <li class="nav-item">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-circle"></i> Login</a>
           </li>
@@ -133,7 +133,7 @@
               <div class="flip-card-back">
                 <h5>SMISKI</h5>
                 <p>Small, glow-in-the-dark figurines that love to hide in corners.</p>
-                <button class="custom-card-button" onclick="window.location.href='products-tab/products-smiski.html'">View</button>
+                <button class="custom-card-button" onclick="window.location.href='products-tab/products-smiski.php'">View</button>
               </div>
             </div>
           </div>
@@ -150,7 +150,7 @@
               <div class="flip-card-back">
                 <h5>MOFUSAND</h5>
                 <p>Adorable cats in quirky costumes, popular in Japan and beyond.</p>
-                <button class="custom-card-button" onclick="window.location.href='products-tab/products-mofusand.html'">View</button>
+                <button class="custom-card-button" onclick="window.location.href='products-tab/products-mofusand.php'">View</button>
               </div>
             </div>
           </div>
@@ -167,7 +167,7 @@
               <div class="flip-card-back">
                 <h5>SONNY ANGEL</h5>
                 <p>Mini collectible angels that come in surprise blind boxes.</p>
-                <button class="custom-card-button" onclick="window.location.href='products-tab/products-sAngel.html'">View</button>
+                <button class="custom-card-button" onclick="window.location.href='products-tab/products-sAngel.php'">View</button>
               </div>
             </div>
           </div>
@@ -184,7 +184,7 @@
               <div class="flip-card-back">
                 <h5>MIFFY</h5>
                 <p>The classic Dutch bunny character, simple yet beloved worldwide.</p>
-                <button class="custom-card-button" onclick="window.location.href='products-tab/products-miffy.html'">View</button>
+                <button class="custom-card-button" onclick="window.location.href='products-tab/products-miffy.php'">View</button>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@
               <div class="flip-card-back">
                 <h5>HIRONO</h5>
                 <p>Figures inspired by contemporary art, reflecting deep emotions.</p>
-                <button class="custom-card-button" onclick="window.location.href='products-tab/products-hirono.html'">View</button>
+                <button class="custom-card-button" onclick="window.location.href='products-tab/products-hirono.php'">View</button>
               </div>
             </div>
           </div>
@@ -218,7 +218,7 @@
               <div class="flip-card-back">
                 <h5>CRYBABY</h5>
                 <p>Playful art toys that bring a mix of cuteness and attitude.</p>
-                <button class="custom-card-button" onclick="window.location.href='products-tab/products-crybaby.html'">View</button>
+                <button class="custom-card-button" onclick="window.location.href='products-tab/products-crybaby.php'">View</button>
               </div>
             </div>
           </div>

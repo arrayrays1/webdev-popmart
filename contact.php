@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popmart - Hirono</title>
-  <link rel="icon" type="image/x-icon" href="../img/favicon.png">
-
+  <title>Popmart - Contact</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
   <!-- bootstrap icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- bootstrap custom css -->
-  <link href="../dist/styles.css" rel="stylesheet">
+  <!-- bootstrap css -->
+  <link href="./dist/styles.css" rel="stylesheet">
 </head>
 <body>
-
 <!-- NAVBAR -->
 <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="bootstrap.html">
-      <img src="../img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="bootstrap.php">
+      <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
     </a>
 
-    <!-- Hamburger -->
+    <!-- hamburger -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,11 +31,11 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto nav-links">
-        <li class="nav-item"><a class="nav-link" href="../bootstrap.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="../products.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="../cart.html"> <i class="bi bi-cart"></i> Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="bootstrap.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.php">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.php"> <i class="bi bi-cart"></i> Cart</a></li>
         <li class="nav-item">
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-circle"></i> Login</a>
         </li>
@@ -46,110 +44,110 @@
   </div>
 </nav>
 
+  <section class="contact-div text-center mt-5 pt-5">
+    <img src="img/contact-banner.png" alt="Popmart customer service banner" class="img-fluid contact-banner" style="width: 100%;">
+  </section>
 
-  <!-- BREADCRUMB -->
-<nav aria-label="breadcrumb" class="custom-breadcrumb mt-5 pt-4">
-  <ol class="breadcrumb container">
-    <li class="breadcrumb-item"><a href="../products.html">Products</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Hirono</li>
-  </ol>
-</nav>
-  <!-- PRODUCT SECTION -->
-  <section class="py-1 custom-product-section">
-    <div class="container">
-      <h1 id="product-title" class="text-center mb-4 custom-h1-product-title">HIRONO</h1>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-hirono/hirono-1.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">HIRONO The Other One Series</h5>
-              <p class="card-text">Php 500.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
+<!-- ================= CONTACT FORM SECTION ================= -->
+<section class="contact-form-section py-5 mt-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6 text-center text-lg-start">
+        <img src="img/hirono-flying.png" alt="Popmart character" class="img-fluid mb-3 contact-img" style="max-width: 350px;">
+        <h2 class="fw-bold mb-3">Got questions?<br><span class="text-muted">Send us an email</span></h2>
+        <p>We’d love to hear from you! Whether you have questions, feedback, or partnership inquiries, our team is here to help.</p>
+        <p>Reach out to us through our contact form or email, and we’ll get back to you as soon as possible. Your thoughts matter to us — let’s stay connected!</p>
+      </div>
+
+      <div class="col-lg-6">
+        <form id="contactForm" class="p-4 bg-light rounded-4 shadow-sm contact-form" novalidate>
+          <div class="mt-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
           </div>
+
+          <div class="mt-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="someone@email.com">
+          </div>
+
+          <div class="mt-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message..."></textarea>
+          </div>
+
+          <div class="mt-4 text-end">
+            <button type="submit" class="btn btn-dark px-4 py-2 rounded-pill">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="py-5 contact-section">
+  <div class="container">
+    <h1 class="custom-h1-contact text-center mb-5">Contact Us</h1>
+
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Customer Support</h3>
+          <p>For questions about online products or customer service, please reach out to our support team.</p>
+          <p><strong>Email:</strong> support@popmart.com</p>
+          <p><strong>Address:</strong><br>Nos. 721 - 725 Nathan Road, Flat/Rm 1405A, 14/F, Mongkok, Kowloon, New Territories, Hong Kong SAR</p>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-hirono/hirono-2.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">HIRONO x Keith Haring Figurine</h5>
-              <p class="card-text">Php 999.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Global Supply & Business</h3>
+          <p>POP MART provides products worldwide. With Roboshop vending machines, strategic alliances, and more, we’re here to support your needs.</p>
+          <p><strong>Asia:</strong> asia@popmart.com</p>
+          <p><strong>North America:</strong> us@popmart.com</p>
+          <p><strong>Europe:</strong> eu@popmart.com</p>
+          <p><strong>Australia:</strong> au@popmart.com</p>
+          <p><strong>New Zealand:</strong> nz@popmart.com</p>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-hirono/hirono-3.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">HIRONO Little Mischief Series</h5>
-              <p class="card-text">Php 500.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Licensing</h3>
+          <p>We explore co-branding opportunities to expand our creative universe. Each IP is backed by a visionary artist, enabling unique collaborations and one-of-a-kind products.</p>
+          <p><strong>Email:</strong> brandlicensing@popmart.com</p>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-hirono/hirono-4.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">HIRONO City of Mercy Series</h5>
-              <p class="card-text">Php 500.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Collaborations</h3>
+          <p>POP MART thrives on creativity and innovation. We welcome collaborations with influencers, media, PR, and artists to create fun and impactful projects.</p>
+          <p><strong>Email:</strong> collab@popmart.com</p>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-hirono/hirono-5.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">HIRONO Echo Series</h5>
-              <p class="card-text">Php 500.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>General Inquiries</h3>
+          <p><strong>Email:</strong> info@popmart.com</p>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-hirono/hirono-6.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">HIRONO Little Prince</h5>
-              <p class="card-text">Php 500.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-hirono/hirono-7.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">HIRONO Mime Series</h5>
-              <p class="card-text">Php 500.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-hirono/hirono-8.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">HIRONO The Pianist</h5>
-              <p class="card-text">Php 999.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
+      <div class="col-md-6">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h3>Media Inquiries</h3>
+          <p><strong>Email:</strong> press@popmart.com</p>
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 
 <!-- LOGIN MODAL -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -158,7 +156,7 @@
       <div class="modal-body text-center p-5">
         <h2 class="fw-bold mb-2">WELCOME TO</h2>
         <div class="mb-4">
-          <img src="../img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
 
         <form id="loginForm" class="text-start" novalidate>
@@ -194,7 +192,7 @@
     <div class="modal-content signup-modal">
       <div class="modal-body text-center p-5">
         <div class="mb-2">
-          <img src="../img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
         <h2 class="fw-bold mb-4">Create your account</h2>
 
@@ -248,28 +246,25 @@
 </div>
 
 
+
+<!-- ================= FOOTER ================= -->
+<footer class="custom-footer text-center py-3">
+  <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
+</footer>
+
 <!-- jquery and javascript -->
-<script src="../dist/jquery.min.js"></script>
-<script src="../dist/bootstrap.bundle.min.js"></script>
+<script src="./dist/jquery.min.js"></script>
+<script src="./dist/bootstrap.bundle.min.js"></script>
 
 <!-- jquery validation for online -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script> -->
 
 <!-- jquery validations locally -->
-<script src="../dist/jquery.validate.min.js"></script>
-<script src="../dist/additional-methods.min.js"></script>
+<script src="./dist/jquery.validate.min.js"></script>
+<script src="./dist/additional-methods.min.js"></script>
 
 <!-- ================= SCRIPTS ================= -->
-  <script>
-    // breadcrumb
-    const params = new URLSearchParams(window.location.search);
-    const productName = params.get("name") || "Product";
-
-    document.getElementById("breadcrumb-product").textContent = productName;
-    document.getElementById("product-title").textContent = productName;
-    document.getElementById("product-card-title").textContent = productName;
-  </script>
 
 <script>
 // defines contact form validation: name, email, message

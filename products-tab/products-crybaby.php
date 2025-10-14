@@ -3,49 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popmart</title>
-  <link rel="icon" type="image/x-icon" href="favicon.png">
-
-  <!-- Bootstrap CSS -->
-  <!-- For CDN: uncomment below -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-  <!-- For local: uncomment below -->
-  <!-- <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <title>Popmart - Crybaby</title>
+  <link rel="icon" type="image/x-icon" href="../img/favicon.png">
 
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- bootstrap icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- bootstrap css -->
-  <link href="./dist/styles.css" rel="stylesheet">
+  <!-- bootstrap custom css -->
+  <link href="../dist/styles.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- navbar -->
 <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
   <div class="container">
-    <!-- logo -->
-    <a class="navbar-brand" href="bootstrap.html">
-      <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="bootstrap.php">
+      <img src="../img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
     </a>
 
-    <!-- hamburgr menu -->
+    <!-- hamburger -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- navbar links -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto nav-links">
-        <li class="nav-item"><a class="nav-link active" href="bootstrap.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="cart.html"> <i class="bi bi-cart"></i> Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="../bootstrap.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../products.php">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="../about.php">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="../contact.php">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="../cart.php"> <i class="bi bi-cart"></i> Cart</a></li>
         <li class="nav-item">
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-circle"></i> Login</a>
         </li>
@@ -54,151 +46,114 @@
   </div>
 </nav>
 
-<!-- ================= HERO CAROUSEL ================= -->
-<header>
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <!-- breadcrumb -->
+<nav aria-label="breadcrumb" class="custom-breadcrumb mt-5 pt-4">
+  <ol class="breadcrumb container">
+    <li class="breadcrumb-item"><a href="../products.php">Products</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Crybaby</li>
+  </ol>
+</nav>
 
-    <!-- indicators -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-    </div>
-
-    <!-- carousel items -->
-    <div class="carousel-inner">
-      <!-- slide 1 -->
-      <div class="carousel-item active" style="background:url('img/banner-1.png') center/cover no-repeat; height: 600px;">
-        <div class="carousel-caption d-none d-md-block">
-          <h1>Welcome to Popmart!</h1>
-          <p>Discover collectibles</p>
-        </div>
-      </div>
-
-      <!-- slide 2 -->
-      <div class="carousel-item" style="background:url('img/banner-2.png') center/cover no-repeat; height: 600px;">
-        <div class="carousel-caption d-none d-md-block">
-          <h1>New Arrivals</h1>
-          <p>Check out the latest collection</p>
-        </div>
-      </div>
-
-      <!-- slide 3 -->
-      <div class="carousel-item" style="background:url('img/banner-3.png') center/cover no-repeat; height: 600px;">
-        <div class="carousel-caption d-none d-md-block">
-          <h1>Exclusive Deals</h1>
-          <p>Don’t miss our special offers</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- carousel controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</header>
-
-<!-- ================= NEW ARRIVALS ================= -->
-<section class="py-5 new-arrivals">
-  <div class="container">
-    <h1 class="text-center mb-4 custom-h1">【NEW ARRIVALS】</h1>
-
-    <div class="row g-4 justify-content-center">
-      <!-- product 1 -->
-      <div class="col-md-3">
-        <div class="custom-card">
-          <img src="img/new-arrival-1.png" alt="Product 1" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">SMISKI Birthday Series</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-smiski.html'">View</button>
-        </div>
-      </div>
-
-      <!-- product 2 -->
-      <div class="col-md-3">
-        <div class="custom-card">
-          <img src="img/new-arrival-2.png" alt="Product 2" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">HIRONO The Pianist Figure</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-hirono.html'">View</button>
-        </div>
-      </div>
-
-      <!-- product 3 -->
-      <div class="col-md-3">
-        <div class="custom-card">
-          <img src="img/new-arrival-3.png" alt="Product 3" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">POP BEAN Coffee Factory Series</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-crybaby.html'">View</button>
-        </div>
-      </div>
-
-      <!-- product 4 -->
-      <div class="col-md-3">
-        <div class="custom-card">
-          <img src="img/new-arrival-4.png" alt="Product 4" class="custom-card-img">
-          <div class="custom-card-details">
-            <p class="text-title">SMISKI Touch Light Lamp</p>
-          </div>
-          <button class="custom-card-button" onclick="window.location.href='products-tab/products-smiski.html'">View</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= BEST SELLERS ================= -->
-<section class="py-5">
-  <div class="container">
-    <h1 class="text-center mb-4 custom-h1">【BEST SELLERS】</h1>
-
-    <div class="row g-4">
-      <!-- best seller 1 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="img/best-seller-1.png" class="card-img-top" alt="Product 1">
-          <div class="card-body">
-            <h5 class="card-title-best-seller">SMISKI Museum Series</h5>
-            <p class="card-text">Php 300.00</p>
-            <a href="cart.html" class="btn btn-primary w-100">Add to Cart</a>
+  <!-- product section -->
+  <section class="py-1 custom-product-section">
+    <div class="container">
+      <h1 id="product-title" class="text-center mb-4 custom-h1-product-title">CRYBABY</h1>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="../img/products-img-banner/products-crybaby/crybaby-1.png" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+              <h5 class="card-title-best-seller" id="product-card-title">CRYBABY Powerpuff Girls Series</h5>
+              <p class="card-text">Php 300.00</p>
+              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- best seller 2 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="img/best-seller-2.png" class="card-img-top" alt="Product 2">
-          <div class="card-body">
-            <h5 class="card-title-best-seller">HIRONO Little Mischief</h5>
-            <p class="card-text">Php 500.00</p>
-            <a href="cart.html" class="btn btn-primary w-100">Add to Cart</a>
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="../img/products-img-banner/products-crybaby/crybaby-2.png" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+              <h5 class="card-title-best-seller" id="product-card-title">CRYBABY Crying for Love Series</h5>
+              <p class="card-text">Php 300.00</p>
+              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- best seller 3 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="img/best-seller-3.png" class="card-img-top" alt="Product 3">
-          <div class="card-body">
-            <h5 class="card-title-best-seller">MOFUSAND Dessert Series</h5>
-            <p class="card-text">Php 300.00</p>
-            <a href="cart.html" class="btn btn-primary w-100">Add to Cart</a>
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="../img/products-img-banner/products-crybaby/crybaby-3.png" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+              <h5 class="card-title-best-seller" id="product-card-title">CRYBABY Wild but Cute Series</h5>
+              <p class="card-text">Php 300.00</p>
+              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="../img/products-img-banner/products-crybaby/crybaby-4.png" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+              <h5 class="card-title-best-seller" id="product-card-title">CRYBABY Crying Again 1 Series</h5>
+              <p class="card-text">Php 300.00</p>
+              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="../img/products-img-banner/products-crybaby/crybaby-5.png" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+              <h5 class="card-title-best-seller" id="product-card-title">CRYBABY Crying Parade Series</h5>
+              <p class="card-text">Php 300.00</p>
+              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="../img/products-img-banner/products-crybaby/crybaby-6.png" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+              <h5 class="card-title-best-seller" id="product-card-title">CRYBABY Sad Club Series</h5>
+              <p class="card-text">Php 300.00</p>
+              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="../img/products-img-banner/products-crybaby/crybaby-7.png" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+              <h5 class="card-title-best-seller" id="product-card-title">CRYBABY Crying Again 2 Series</h5>
+              <p class="card-text">Php 300.00</p>
+              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card h-100">
+            <img src="../img/products-img-banner/products-crybaby/crybaby-8.png" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+              <h5 class="card-title-best-seller" id="product-card-title">CRYBABY Sunset Concert Series</h5>
+              <p class="card-text">Php 300.00</p>
+              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- footer -->
+  <footer class="custom-footer text-center py-3">
+    <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
+  </footer>
 
 
 <!-- LOGIN MODAL -->
@@ -208,7 +163,7 @@
       <div class="modal-body text-center p-5">
         <h2 class="fw-bold mb-2">WELCOME TO</h2>
         <div class="mb-4">
-          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="../img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
 
         <form id="loginForm" class="text-start" novalidate>
@@ -244,7 +199,7 @@
     <div class="modal-content signup-modal">
       <div class="modal-body text-center p-5">
         <div class="mb-2">
-          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="../img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
         <h2 class="fw-bold mb-4">Create your account</h2>
 
@@ -297,24 +252,29 @@
   </div>
 </div>
 
-<!-- ================= FOOTER ================= -->
-<footer class="custom-footer text-center py-3">
-  <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
-</footer>
 
 <!-- jquery and javascript -->
-<script src="./dist/jquery.min.js"></script>
-<script src="./dist/bootstrap.bundle.min.js"></script>
+<script src="../dist/jquery.min.js"></script>
+<script src="../dist/bootstrap.bundle.min.js"></script>
 
 <!-- jquery validation for online -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script> -->
 
 <!-- jquery validations locally -->
-<script src="./dist/jquery.validate.min.js"></script>
-<script src="./dist/additional-methods.min.js"></script>
+<script src="../dist/jquery.validate.min.js"></script>
+<script src="../dist/additional-methods.min.js"></script>
 
 <!-- ================= SCRIPTS ================= -->
+  <script>
+    // breadcrumb
+    const params = new URLSearchParams(window.location.search);
+    const productName = params.get("name") || "Product";
+
+    document.getElementById("breadcrumb-product").textContent = productName;
+    document.getElementById("product-title").textContent = productName;
+    document.getElementById("product-card-title").textContent = productName;
+  </script>
 
 <script>
 // defines contact form validation: name, email, message

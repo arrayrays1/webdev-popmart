@@ -3,142 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popmart - Mofusand</title>
-  <link rel="icon" type="image/x-icon" href="../img/favicon.png">
+  <title>Popmart - Products</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
 
-  <!-- google fonts -->
+  <!-- google gonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
   <!-- bootstrap icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- bootstrap css -->
-  <link href="../dist/styles.css" rel="stylesheet">
+  <!-- bootstrap csss -->
+  <link href="./dist/styles.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="bootstrap.html">
-      <img src="../img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
-    </a>
+  <!-- ================= NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
+    <div class="container">
+      <!-- brand logo -->
+      <a class="navbar-brand" href="bootstrap.php">
+        <img src="img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
+      </a>
 
-    <!-- Hamburger -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- hamburger menu -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto nav-links">
-        <li class="nav-item"><a class="nav-link" href="../bootstrap.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="../products.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="../cart.html"> <i class="bi bi-cart"></i> Cart</a></li>
-        <li class="nav-item">
+      <!-- navigation links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item"><a class="nav-link" href="bootstrap.php">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.php">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.php"> <i class="bi bi-cart"></i> Cart</a></li>
+          <li class="nav-item">
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-circle"></i> Login</a>
         </li>
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-
-  <!-- BREADCRUMB -->
-<nav aria-label="breadcrumb" class="custom-breadcrumb mt-5 pt-4">
-  <ol class="breadcrumb container">
-    <li class="breadcrumb-item"><a href="../products.html">Products</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Mofusand</li>
-  </ol>
-</nav>
-  <!-- PRODUCT SECTION -->
-  <section class="py-1 custom-product-section">
+  <!-- ================= PRODUCTS SECTION ================= -->
+  <section class="py-5 custom-products">
     <div class="container">
-      <h1 id="product-title" class="text-center mb-4 custom-h1-product-title">MOFUSAND</h1>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-1.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Pastries</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
+      <h1 class="text-center mb-4 custom-h1-products">PRODUCTS</h1>
+
+      <div class="row justify-content-center">
+
+        <!-- product 1 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/smiski.png" alt="Product 1" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">SMISKI</p>
             </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-smiski.php'">View</button>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-2.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Journey</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
+
+        <!-- product 2 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/mofusand.png" alt="Product 2" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">MOFUSAND</p>
             </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-mofusand.php'">View</button>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-3.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Hippers</h5>
-              <p class="card-text">Php 249.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
+
+        <!-- product 3 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/sonny-angel.png" alt="Product 3" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">SONNY ANGEL</p>
             </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-sAngel.php'">View</button>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-4.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Sharks</h5>
-              <p class="card-text">Php 399.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
+
+        <!-- product 4 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/miffy.png" alt="Product 4" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">MIFFY</p>
             </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-miffy.php'">View</button>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-5.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Tempura</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
+
+        <!-- product 5 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/hirono.png" alt="Product 5" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">HIRONO</p>
             </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-hirono.php'">View</button>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-6.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Plushies</h5>
-              <p class="card-text">Php 999.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
+
+        <!-- product 6 -->
+        <div class="col-md-4">
+          <div class="custom-card">
+            <img src="img/products-img-banner/crybaby.png" alt="Product 6" class="custom-card-img">
+            <div class="custom-card-details">
+              <p class="text-title">CRYBABY</p>
             </div>
+            <button class="custom-card-button" onclick="window.location.href='products-tab/products-crybaby.php'">View</button>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-7.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Berry</h5>
-              <p class="card-text">Php 999.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-8.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Fluffy</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.html" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -151,7 +133,7 @@
       <div class="modal-body text-center p-5">
         <h2 class="fw-bold mb-2">WELCOME TO</h2>
         <div class="mb-4">
-          <img src="../img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
 
         <form id="loginForm" class="text-start" novalidate>
@@ -187,7 +169,7 @@
     <div class="modal-content signup-modal">
       <div class="modal-body text-center p-5">
         <div class="mb-2">
-          <img src="../img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
         <h2 class="fw-bold mb-4">Create your account</h2>
 
@@ -240,29 +222,25 @@
   </div>
 </div>
 
+  <!-- ================= FOOTER ================= -->
+  <footer class="custom-footer text-center py-3">
+    <p class="mb-0">© 2025 POPMART | Designed for demo purposes</p>
+  </footer>
+
 
 <!-- jquery and javascript -->
-<script src="../dist/jquery.min.js"></script>
-<script src="../dist/bootstrap.bundle.min.js"></script>
+<script src="./dist/jquery.min.js"></script>
+<script src="./dist/bootstrap.bundle.min.js"></script>
 
 <!-- jquery validation for online -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script> -->
 
 <!-- jquery validations locally -->
-<script src="../dist/jquery.validate.min.js"></script>
-<script src="../dist/additional-methods.min.js"></script>
+<script src="./dist/jquery.validate.min.js"></script>
+<script src="./dist/additional-methods.min.js"></script>
 
 <!-- ================= SCRIPTS ================= -->
-  <script>
-    // breadcrumb
-    const params = new URLSearchParams(window.location.search);
-    const productName = params.get("name") || "Product";
-
-    document.getElementById("breadcrumb-product").textContent = productName;
-    document.getElementById("product-title").textContent = productName;
-    document.getElementById("product-card-title").textContent = productName;
-  </script>
 
 <script>
 // defines contact form validation: name, email, message
