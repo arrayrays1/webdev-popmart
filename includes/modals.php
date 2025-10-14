@@ -5,7 +5,7 @@
       <div class="modal-body text-center p-5">
         <h2 class="fw-bold mb-2">WELCOME TO</h2>
         <div class="mb-4">
-          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="/website-popmart/img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
 
         <form id="loginForm" class="text-start" novalidate>
@@ -41,7 +41,7 @@
     <div class="modal-content signup-modal">
       <div class="modal-body text-center p-5">
         <div class="mb-2">
-          <img src="img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
+          <img src="/website-popmart/img/pop-mart-logo.png" alt="Popmart Logo" class="login-logo">
         </div>
         <h2 class="fw-bold mb-4">Create your account</h2>
 
