@@ -1,0 +1,9 @@
+# Force language detection
+*.php linguist-language=PHP
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+
+# Exclude irrelevant directories from GitHub language stats
+node_modules/* linguist-vendored
+dist/* linguist-vendored
