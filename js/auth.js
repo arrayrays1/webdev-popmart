@@ -56,9 +56,13 @@ $(function(){
     // initialize badge on load if logged in
     if (window.IS_LOGGED_IN) updateCartBadge();
 
-    // Open modal with product data
+    // Open modal with product data (or prompt login if not logged in)
     $(document).on('click', '.add-to-cart', function(e){
-        if (!window.IS_LOGGED_IN) return; // handled above when not logged in
+        if (!window.IS_LOGGED_IN) {
+            e.preventDefault();
+            try { new bootstrap.Modal(document.getElementById('loginModal')).show(); } catch(_e) {}
+            return;
+        }
         e.preventDefault();
         const $card = $(this).closest('.card');
         const productId = $(this).data('product-id');
