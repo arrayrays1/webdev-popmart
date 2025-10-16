@@ -23,7 +23,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">HIRONO The Other One Series</h5>
               <p class="card-text">Php 500.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,9 @@
   <link href="/website-popmart/dist/styles.css" rel="stylesheet">
 </head>
 <body>
+<script>
+  window.IS_LOGGED_IN = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+</script>
 <!-- NAVBAR -->
 <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
   <div class="container">
@@ -37,7 +41,18 @@
             <li class="nav-item"><a class="nav-link <?php if($activePage == 'contact') echo 'active'; ?>" href="/website-popmart/contact.php">Contact</a></li>
             <li class="nav-item"><a class="nav-link <?php if($activePage == 'cart') echo 'active'; ?>" href="/website-popmart/cart.php"><i class="bi bi-cart"></i> Cart</a></li>
             <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-circle"></i> Login</a>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <?php echo htmlspecialchars($_SESSION['first_name']); ?>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-person-circle"></i> Login</a>
+                <?php endif; ?>
             </li>
             </ul>
     </div>

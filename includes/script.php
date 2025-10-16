@@ -12,6 +12,7 @@
 
 <script src="./js/validation.js"></script>
 <script src="./js/animation.js"></script>
+<script src="js/auth.js"></script>
 
 </body>
 </html>

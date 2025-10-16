@@ -21,6 +21,8 @@
             <i class="bi bi-eye toggle-password"></i>
           </div>
           
+          <div id="loginFeedback" class="mt-3"></div>
+
 
           <button type="submit" class="btn btn-danger w-100 rounded-pill mt-4">Login</button>
         </form>
@@ -81,6 +83,8 @@
             <input type="password" class="form-control pe-5" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="off" required>
             <i class="bi bi-eye toggle-password icon-eye"></i>
           </div>
+
+          <div id="signupFeedback" class="mt-3"></div>
 
           <button type="submit" class="btn btn-danger w-100 rounded-pill mt-4">Sign Up</button>
         </form>

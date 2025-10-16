@@ -17,6 +17,7 @@
 
 <script src="/website-popmart/js/validation.js"></script>
 <script src="/website-popmart/js/animation.js"></script>
+<script src="/website-popmart/js/auth.js"></script>
 
   <script>
     // breadcrumb

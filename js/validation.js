@@ -112,6 +112,14 @@ $(function () {
 
 $(function () {
   // defines validation rules (for login & signup)
+  // helper: render inline feedback inside modal forms
+  function showFeedback(containerId, type, message) {
+    const $box = $('#' + containerId);
+    if (!$box.length) return;
+    const klass = type === 'success' ? 'alert-success' : type === 'warning' ? 'alert-warning' : 'alert-danger';
+    const html = '<div class="alert ' + klass + ' py-2 px-3 mb-0" role="alert">' + message + '</div>';
+    $box.stop(true, true).hide().html(html).fadeIn(140);
+  }
   $.validator.addMethod("validName", function (value, element) {
     if (/^\s|\s$/.test(value)) return false;
     const trimmed = $.trim(value);
@@ -208,11 +216,29 @@ $(function () {
     unhighlight: function (el) {
       $(el).removeClass("is-invalid").addClass("is-valid");
     },
+    // submit handler for signup form
     submitHandler: function (form) {
-      const msg = $('<div class="alert alert-success mt-3" role="alert">Account created successfully!</div>');
-      msg.hide().insertBefore(form).fadeIn(200).delay(1500).fadeOut(300, function(){ $(this).remove(); });
-      form.reset();
-      $(form).find('.is-valid').removeClass('is-valid');
+      $.ajax({
+        type: "POST",
+        url: "/website-popmart/db/signup_process.php", // backend file to handle insert
+        data: $(form).serialize(),
+        success: function (response) {
+          const res = response.trim();
+          if (res === "success") {
+            showFeedback('signupFeedback', 'success', 'Account created successfully! Please login.');
+            form.reset();
+            $(form).find('.is-valid').removeClass('is-valid');
+            setTimeout(function(){ $('#signupModal').modal('hide'); $('#loginModal').modal('show'); }, 900);
+          } else if (res === 'duplicate_email') {
+            showFeedback('signupFeedback', 'danger', 'This email is already registered. Please log in instead.');
+          } else {
+            showFeedback('signupFeedback', 'danger', 'Signup failed. ' + response);
+          }
+        },
+        error: function (xhr, status, error) {
+          showFeedback('signupFeedback', 'danger', 'Network error. Please try again.');
+        }
+      });
     }
   });
 
@@ -247,10 +273,27 @@ $(function () {
       $(el).removeClass("is-invalid").addClass("is-valid");
     },
     submitHandler: function (form) {
-      $('#loginModal').modal('hide');
-      alert('Login successful!');
-      form.reset();
-      $(form).find('.is-valid').removeClass('is-valid');
+      $.ajax({
+        type: "POST",
+        url: "/website-popmart/db/login_process.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          const res = response.trim();
+          if (res === "success") {
+            showFeedback('loginFeedback', 'success', 'Login successful! Redirecting...');
+            setTimeout(function(){ location.reload(); }, 700);
+          } else if (res === "invalid_password") {
+            showFeedback('loginFeedback', 'danger', 'Wrong password. Please try again.');
+          } else if (res === "no_user") {
+            showFeedback('loginFeedback', 'warning', "No account yet. Please sign up to log in.");
+          } else {
+            showFeedback('loginFeedback', 'danger', 'Login failed. ' + response);
+          }
+        },
+        error: function (xhr, status, error) {
+          showFeedback('loginFeedback', 'danger', 'Network error. Please try again.');
+        }
+      });
     }
   });
 

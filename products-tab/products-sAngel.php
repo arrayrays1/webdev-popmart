@@ -22,7 +22,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">SONNY ANGEL Gifts of Love Series</h5>
               <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>

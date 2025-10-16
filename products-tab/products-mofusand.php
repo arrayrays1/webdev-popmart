@@ -22,7 +22,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Pastries</h5>
               <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Journey</h5>
               <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Hippers</h5>
               <p class="card-text">Php 249.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Sharks</h5>
               <p class="card-text">Php 399.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Tempura</h5>
               <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Plushies</h5>
               <p class="card-text">Php 999.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Berry</h5>
               <p class="card-text">Php 999.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@
             <div class="card-body">
               <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Fluffy</h5>
               <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
+              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
             </div>
           </div>
         </div>
