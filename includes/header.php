@@ -39,7 +39,12 @@
             <li class="nav-item"><a class="nav-link <?php if($activePage == 'products') echo 'active'; ?>" href="/website-popmart/products.php">Products</a></li>
             <li class="nav-item"><a class="nav-link <?php if($activePage == 'about') echo 'active'; ?>" href="/website-popmart/about.php">About</a></li>
             <li class="nav-item"><a class="nav-link <?php if($activePage == 'contact') echo 'active'; ?>" href="/website-popmart/contact.php">Contact</a></li>
-            <li class="nav-item"><a class="nav-link <?php if($activePage == 'cart') echo 'active'; ?>" href="/website-popmart/cart.php"><i class="bi bi-cart"></i> Cart</a></li>
+            <li class="nav-item">
+              <a class="nav-link <?php if($activePage == 'cart') echo 'active'; ?> position-relative" href="/website-popmart/cart.php">
+                <i class="bi bi-cart"></i> Cart
+                <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display:none;">0</span>
+              </a>
+            </li>
             <li class="nav-item">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <div class="dropdown">

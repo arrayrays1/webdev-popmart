@@ -31,7 +31,7 @@
                 <div class="card-body">
                   <h5 class="card-title-best-seller"><?php echo htmlspecialchars($row['name']); ?></h5>
                   <p class="card-text">Php <?php echo number_format((float)$row['price'], 2); ?></p>
-                  <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
+                  <a href="#" class="btn btn-primary w-100 add-to-cart" data-product-id="<?php echo (int)$row['id']; ?>" data-price="<?php echo (float)$row['price']; ?>" data-stock="<?php echo isset($row['stock']) ? (int)$row['stock'] : 25; ?>">Add to Cart</a>
                 </div>
               </div>
             </div>
