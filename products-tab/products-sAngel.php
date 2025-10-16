@@ -2,6 +2,13 @@
   $activePage = 'products';
   include '../includes/header.php';
   include '../includes/modals.php';
+  include_once __DIR__ . '/../db/db_connect.php';
+
+  $category = 'sonnyangel';
+  $stmt = $conn->prepare("SELECT id, name, description, image_path, price FROM products WHERE category = ? ORDER BY id ASC");
+  $stmt->bind_param('s', $category);
+  $stmt->execute();
+  $result = $stmt->get_result();
 ?>
 
   <!-- BREADCRUMB -->
@@ -16,95 +23,30 @@
     <div class="container">
       <h1 id="product-title" class="text-center mb-4 custom-h1-product-title">SONNY ANGEL</h1>
       <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-sangel/sangel-1.png" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">SONNY ANGEL Gifts of Love Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
+        <?php if ($result && $result->num_rows > 0): ?>
+          <?php while ($row = $result->fetch_assoc()): ?>
+            <div class="col-md-3">
+              <div class="card h-100">
+                <img src="<?php echo htmlspecialchars($row['image_path']); ?>" class="card-img-top" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title-best-seller"><?php echo htmlspecialchars($row['name']); ?></h5>
+                  <p class="card-text">Php <?php echo number_format((float)$row['price'], 2); ?></p>
+                  <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
+                </div>
+              </div>
             </div>
+          <?php endwhile; ?>
+        <?php else: ?>
+          <div class="col-12">
+            <div class="alert alert-info">No products found in this category.</div>
           </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-sangel/sangel-2.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">SONNY ANGEL Hippers Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-sangel/sangel-3.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">SONNY ANGEL Cherry Blossom Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-sangel/sangel-4.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">SONNY ANGEL Kiss Kiss Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-sangel/sangel-5.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">SONNY ANGEL Peaceful Spring Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-sangel/sangel-6.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">SONNY ANGEL Cat Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-sangel/sangel-7.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">SONNY ANGEL Winter Wonderland Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-sangel/sangel-8.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">SONNY ANGEL Snack Series</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100">Add to Cart</a>
-            </div>
-          </div>
-        </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
   
-<?php include '../includes/footer.php'; ?>
+<?php 
+  if (isset($stmt)) { $stmt->close(); }
+  if (isset($conn)) { $conn->close(); }
+  include '../includes/footer.php'; 
+?>

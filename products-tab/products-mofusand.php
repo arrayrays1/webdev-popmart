@@ -2,6 +2,14 @@
   $activePage = 'products';
   include '../includes/header.php';
   include '../includes/modals.php';
+  include_once __DIR__ . '/../db/db_connect.php';
+
+  // Fetch products for this category
+  $category = 'mofusand';
+  $stmt = $conn->prepare("SELECT id, name, description, image_path, price FROM products WHERE category = ? ORDER BY id ASC");
+  $stmt->bind_param('s', $category);
+  $stmt->execute();
+  $result = $stmt->get_result();
 ?>
 
   <!-- BREADCRUMB -->
@@ -16,88 +24,30 @@
     <div class="container">
       <h1 id="product-title" class="text-center mb-4 custom-h1-product-title">MOFUSAND</h1>
       <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-1.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Pastries</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
+        <?php if ($result && $result->num_rows > 0): ?>
+          <?php while ($row = $result->fetch_assoc()): ?>
+            <div class="col-md-3">
+              <div class="card h-100">
+                <img src="<?php echo htmlspecialchars($row['image_path']); ?>" class="card-img-top" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title-best-seller"><?php echo htmlspecialchars($row['name']); ?></h5>
+                  <p class="card-text">Php <?php echo number_format((float)$row['price'], 2); ?></p>
+                  <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
+                </div>
+              </div>
             </div>
+          <?php endwhile; ?>
+        <?php else: ?>
+          <div class="col-12">
+            <div class="alert alert-info">No products found in this category.</div>
           </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-2.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Journey</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-3.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Hippers</h5>
-              <p class="card-text">Php 249.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-4.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Sharks</h5>
-              <p class="card-text">Php 399.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-5.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Tempura</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-6.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Plushies</h5>
-              <p class="card-text">Php 999.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-7.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Berry</h5>
-              <p class="card-text">Php 999.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100">
-            <img src="../img/products-img-banner/products-mofusand/mofusand-8.png" class="card-img-top" alt="Product Image">
-            <div class="card-body">
-              <h5 class="card-title-best-seller" id="product-card-title">MOFUSAND Fluffy</h5>
-              <p class="card-text">Php 300.00</p>
-              <a href="../cart.php" class="btn btn-primary w-100 add-to-cart">Add to Cart</a>
-            </div>
-          </div>
-        </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
   
-<?php include '../includes/footer.php'; ?>
+<?php 
+  $stmt->close();
+  $conn->close();
+  include '../includes/footer.php'; 
+?>
