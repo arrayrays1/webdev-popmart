@@ -5,10 +5,9 @@
   include_once __DIR__ . '/../db/db_connect.php';
 
   $category = 'miffy';
-  $stmt = $conn->prepare("SELECT id, name, description, image_path, price FROM products WHERE category = ? ORDER BY id ASC");
-  $stmt->bind_param('s', $category);
-  $stmt->execute();
-  $result = $stmt->get_result();
+  $stmt = $pdo->prepare("SELECT id, name, description, image_path, price FROM products WHERE category = ? ORDER BY id ASC");
+  $stmt->execute([$category]);
+  $rows = $stmt->fetchAll();
 ?>
 
   <!-- BREADCRUMB -->
@@ -23,8 +22,8 @@
     <div class="container">
       <h1 id="product-title" class="text-center mb-4 custom-h1-product-title">MIFFY</h1>
       <div class="row g-4">
-        <?php if ($result && $result->num_rows > 0): ?>
-          <?php while ($row = $result->fetch_assoc()): ?>
+        <?php if ($rows && count($rows) > 0): ?>
+          <?php foreach ($rows as $row): ?>
             <div class="col-md-3">
               <div class="card h-100">
                 <img src="<?php echo htmlspecialchars($row['image_path']); ?>" class="card-img-top" alt="Product Image">
@@ -35,7 +34,7 @@
                 </div>
               </div>
             </div>
-          <?php endwhile; ?>
+          <?php endforeach; ?>
         <?php else: ?>
           <div class="col-12">
             <div class="alert alert-info">No products found in this category.</div>
@@ -45,7 +44,5 @@
     </div>
   </section>
 <?php 
-  if (isset($stmt)) { $stmt->close(); }
-  if (isset($conn)) { $conn->close(); }
   include '../includes/footer.php'; 
 ?>

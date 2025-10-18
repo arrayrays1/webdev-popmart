@@ -8,21 +8,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $contact = $_POST['contactNumber'];
   $password = password_hash($_POST['signupPassword'], PASSWORD_DEFAULT);
 
-  $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, contact_number, password) VALUES (?, ?, ?, ?, ?)");
-  $stmt->bind_param("sssss", $firstName, $lastName, $email, $contact, $password);
-
-  if ($stmt->execute()) {
+  try {
+    $stmt = $pdo->prepare("INSERT INTO users (first_name, last_name, email, contact_number, password) VALUES (?, ?, ?, ?, ?)");
+    $stmt->execute([$firstName, $lastName, $email, $contact, $password]);
     echo "success";
-  } else {
-    if (str_contains($stmt->error, 'Duplicate entry')) {
+  } catch (PDOException $e) {
+    if (str_contains($e->getMessage(), 'Duplicate entry')) {
       echo "duplicate_email";
     } else {
-      echo "error: " . $stmt->error;
+      echo "error: " . $e->getMessage();
     }
   }
-
-  $stmt->close();
-  $conn->close();
 } else {
   echo "Invalid request method";
 }

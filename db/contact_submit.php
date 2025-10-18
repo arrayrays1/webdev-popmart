@@ -11,13 +11,13 @@ if ($name === '' || $email === '' || $message === '') {
     exit;
 }
 
-$stmt = $conn->prepare('INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)');
-$stmt->bind_param('sss', $name, $email, $message);
-$ok = $stmt->execute();
-$stmt->close();
-$conn->close();
-
-echo json_encode(['success'=>$ok]);
+try {
+    $stmt = $pdo->prepare('INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)');
+    $ok = $stmt->execute([$name, $email, $message]);
+    echo json_encode(['success'=>$ok]);
+} catch (PDOException $e) {
+    echo json_encode(['success'=>false,'message'=>'Database error: ' . $e->getMessage()]);
+}
 ?>
 
 
